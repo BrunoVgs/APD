@@ -441,6 +441,8 @@ class ComposerStaticInitf7e7e2d456ced3cdabfafd267a6a13e3
     );
 
     public static $classMap = array (
+        'App\\Controller\\MainController' => __DIR__ . '/../..' . '/src/Controller/MainController.php',
+        'App\\Controller\\PlayerController' => __DIR__ . '/../..' . '/src/Controller/PlayerController.php',
         'App\\DataFixtures\\AppFixtures' => __DIR__ . '/../..' . '/src/DataFixtures/AppFixtures.php',
         'App\\Kernel' => __DIR__ . '/../..' . '/src/Kernel.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
