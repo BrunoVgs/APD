@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class TeamController extends AbstractController
 {
     /**
-     * @Route("/admin/equipes", name="app_back_equipes", methods={"GET})
+     * @Route("/admin/equipes", name="app_back_equipes", methods={"GET"})
      */
     public function index(): Response
     {
