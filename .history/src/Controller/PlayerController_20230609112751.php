@@ -30,22 +30,22 @@ class PlayerController extends AbstractController
     */
     public function edit(Request $request, $id): Response
     {
-        return $this->redirectToRoute('admin_players');
+        return $this->redirectToRoute('admin_joueurs');
     }
 
     /**
-    * @Route("/admin/player/{id}", name="admin_players_delete", methods={"DELETE"})
+    * @Route("/admin/joueurs/{id}", name="admin_joueurs_delete", methods={"DELETE"})
     */
     public function delete($id): Response
     {
-        return $this->redirectToRoute('admin_players');
+        return $this->redirectToRoute('admin_joueurs');
     }
 
     public function show(?Player $player): Response
     {
         if ($player === null){throw $this->createNotFoundException("ce joueur n'existe pas");}
 
-        return $this->render('admin/players/show.html.twig', [
+        return $this->render('admin/joueurs/show.html.twig', [
             'player' => $player,
         ]);
     }

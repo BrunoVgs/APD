@@ -45,7 +45,7 @@ class PlayerController extends AbstractController
     {
         if ($player === null){throw $this->createNotFoundException("ce joueur n'existe pas");}
 
-        return $this->render('admin/players/show.html.twig', [
+        return $this->render('admin/joueurs/show.html.twig', [
             'player' => $player,
         ]);
     }
