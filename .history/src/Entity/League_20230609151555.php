@@ -15,11 +15,11 @@ class League
     /**
      * @ORM\OneToMany(targetEntity=Team::class, mappedBy="league")
      */
-    private $team;
+    private $teams;
 
     public function __construct()
     {
-        $this->team = new ArrayCollection();
+        $this->teams = new ArrayCollection();
     }
 
         /**
@@ -27,13 +27,13 @@ class League
      */
     public function getTeams(): ArrayCollection
     {
-        return $this->team;
+        return $this->teams;
     }
 
     public function addTeam(Team $team): self
     {
-        if (!$this->team->contains($team)) {
-            $this->team[] = $team;
+        if (!$this->teams->contains($team)) {
+            $this->teams[] = $team;
             $team->setLeague($this);
         }
 
@@ -42,7 +42,7 @@ class League
 
     public function removeTeam(Team $team): self
     {
-        if ($this->team->removeElement($team) && $team->getLeague() === $this) {
+        if ($this->teams->removeElement($team) && $team->getLeague() === $this) {
             $team->setLeague(null);
         }
 
