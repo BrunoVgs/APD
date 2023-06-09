@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5a19bb7cdc1fc02da186771f49edaee5",
+<<<<<<< HEAD
+    "content-hash": "ae747e887117ef4170419005908d4ca8",
+=======
+    "content-hash": "b44fb9ccfd1a62232d58cd1cd0bde9a5",
+>>>>>>> Team/Players-entities
     "packages": [
         {
             "name": "doctrine/annotations",

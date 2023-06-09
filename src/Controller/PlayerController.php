@@ -6,12 +6,12 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class JoueursController extends AbstractController
+class PlayerController extends AbstractController
 {
     /**
      * @Route("/admin/joueurs", name="admin_joueurs", methods={"GET"})
      */
-    public function joueurs(): Response
+    public function player(): Response
     {
         return $this->render('admin/joueurs/index.html.twig');
     }
