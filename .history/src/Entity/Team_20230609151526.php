@@ -19,7 +19,7 @@ class Team
     }
     
     /**
-     * @ORM\ManyToOne(targetEntity=League::class, inversedBy="team")
+     * @ORM\ManyToOne(targetEntity=League::class, inversedBy="teams")
      * @ORM\JoinColumn(nullable=false)
      */
     private $league;
