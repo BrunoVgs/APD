@@ -13,9 +13,44 @@ use Doctrine\ORM\Mapping as ORM;
 class Team
 {
 
+     /**
+     * @ORM\OneToMany(targetEntity=Player::class, mappedBy="team")
+     */
+    private $players;
+
     public function __construct()
     {
         $this->players = new ArrayCollection();
+    }
+
+     /**
+     * @return Collection|Player[]
+     */
+    public function getPlayers(): ArrayCollection
+    {
+        return $this->players;
+    }
+
+    public function addPlayer(Player $player): self
+    {
+        if (!$this->players->contains($player)) {
+            $this->players[] = $player;
+            $player->setTeam($this);
+        }
+
+        return $this;
+    }
+
+    public function removePlayer(Player $player): self
+    {
+        if ($this->players->contains($player)) {
+            $this->players->removeElement($player);
+            if ($player->getTeam() === $this) {
+                $player->setTeam(null);
+            }
+        }
+
+        return $this;
     }
     
     /**
@@ -128,35 +163,5 @@ class Team
     public function setUpdatedAtValue(): void
     {
         $this->updated_at = new \DateTime();
-    }
-
-     /**
-     * @return Collection|Player[]
-     */
-    public function getPlayers(): ArrayCollection
-    {
-        return $this->players;
-    }
-
-    public function addPlayer(Player $player): self
-    {
-        if (!$this->players->contains($player)) {
-            $this->players[] = $player;
-            $player->setTeam($this);
-        }
-
-        return $this;
-    }
-
-    public function removePlayer(Player $player): self
-    {
-        if ($this->players->contains($player)) {
-            $this->players->removeElement($player);
-            if ($player->getTeam() === $this) {
-                $player->setTeam(null);
-            }
-        }
-
-        return $this;
     }
 }
