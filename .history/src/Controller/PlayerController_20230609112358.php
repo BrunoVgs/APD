@@ -5,7 +5,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Entity\Player;
 
 class PlayerController extends AbstractController
 {
@@ -45,7 +44,7 @@ class PlayerController extends AbstractController
     {
         if ($player === null){throw $this->createNotFoundException("ce joueur n'existe pas");}
 
-        return $this->render('admin/joueurs/show.html.twig', [
+        return $this->render('back/movie/show.html.twig', [
             'player' => $player,
         ]);
     }
