@@ -1803,6 +1803,6 @@ class __TwigTemplate_e1530f762ceb28f964d221b9de0a920adad823caad24ee21b9607d75413
         </tbody>
     </table>
 {% endmacro %}
-", "@Doctrine/Collector/db.html.twig", "/var/www/html/Apothéose-APD/projet-album-panini-digital-back/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig");
+", "@Doctrine/Collector/db.html.twig", "/var/www/html/projet-album-panini-digital/projet-album-panini-digital-back/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig");
     }
 }

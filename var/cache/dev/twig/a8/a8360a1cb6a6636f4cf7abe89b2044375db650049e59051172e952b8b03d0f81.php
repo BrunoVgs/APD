@@ -233,6 +233,6 @@ $context["name"], "profiler_markup_version" =>                 // line 17
     </button>
 </div>
 <!-- END of Symfony Web Debug Toolbar -->
-", "@WebProfiler/Profiler/toolbar.html.twig", "/var/www/html/Apothéose-APD/projet-album-panini-digital-back/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/toolbar.html.twig");
+", "@WebProfiler/Profiler/toolbar.html.twig", "/var/www/html/projet-album-panini-digital/projet-album-panini-digital-back/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/toolbar.html.twig");
     }
 }
