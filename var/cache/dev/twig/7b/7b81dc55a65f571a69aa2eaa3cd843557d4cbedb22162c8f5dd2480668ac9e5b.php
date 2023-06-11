@@ -227,6 +227,6 @@ class __TwigTemplate_b7b82d1905ce75a827fd5ae92a7882bc503e2acc28dcddceece5fae96d0
         </div>
     </form>
 </div>
-", "@WebProfiler/Profiler/search.html.twig", "/var/www/html/Apothéose-APD/projet-album-panini-digital-back/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/search.html.twig");
+", "@WebProfiler/Profiler/search.html.twig", "/var/www/html/projet-album-panini-digital/projet-album-panini-digital-back/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/search.html.twig");
     }
 }
