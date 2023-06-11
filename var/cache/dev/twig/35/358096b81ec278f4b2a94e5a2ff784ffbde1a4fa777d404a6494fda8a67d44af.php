@@ -194,6 +194,6 @@ class __TwigTemplate_aa09839417eb68edad90c728ec120c52c5af9b9ef82c77d87487e997559
         {% block body %}{% endblock %}
     </body>
 </html>
-", "base.html.twig", "/var/www/html/Apothéose-APD/projet-album-panini-digital-back/templates/base.html.twig");
+", "base.html.twig", "/var/www/html/projet-album-panini-digital/projet-album-panini-digital-back/templates/base.html.twig");
     }
 }
