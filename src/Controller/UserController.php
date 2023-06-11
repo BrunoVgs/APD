@@ -6,6 +6,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * Controller Users pour la gestion des utilisateurs via l'espace admin
+ */
 class UserController extends AbstractController
 {
     /**
