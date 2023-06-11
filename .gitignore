@@ -8,6 +8,5 @@
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
-/.history/
-/.vscode/
-/.idea/
+/.idea/*
+
