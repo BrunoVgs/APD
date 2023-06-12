@@ -25,9 +25,9 @@ class User
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="json")
      */
-    private $role;
+    private $role = [] ;
 
     /**
      * @ORM\Column(type="text")
@@ -43,16 +43,6 @@ class User
      * @ORM\Column(type="string", length=255)
      */
     private $password;
-
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    private $created_at;
-
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    private $updated_at;
 
     /**
      * @ORM\ManyToMany(targetEntity=Player::class, inversedBy="users")
@@ -81,12 +71,16 @@ class User
         return $this;
     }
 
-    public function getRole(): ?string
+    public function getRole(): array
     {
-        return $this->role;
+        $role = $this->role;
+        // guarantee every user at least has ROLE_USER
+        // $roles[] = 'ROLE_USER';
+
+        return array_unique($role);
     }
 
-    public function setRole(string $role): self
+    public function setRole(array $role): self
     {
         $this->role = $role;
 
@@ -125,30 +119,6 @@ class User
     public function setPassword(string $password): self
     {
         $this->password = $password;
-
-        return $this;
-    }
-
-    public function getCreatedAt(): ?\DateTimeInterface
-    {
-        return $this->created_at;
-    }
-
-    public function setCreatedAt(\DateTimeInterface $created_at): self
-    {
-        $this->created_at = $created_at;
-
-        return $this;
-    }
-
-    public function getUpdatedAt(): ?\DateTimeInterface
-    {
-        return $this->updated_at;
-    }
-
-    public function setUpdatedAt(\DateTimeInterface $updated_at): self
-    {
-        $this->updated_at = $updated_at;
 
         return $this;
     }
