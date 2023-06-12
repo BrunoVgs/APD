@@ -52,23 +52,27 @@ class __TwigTemplate_aa09839417eb68edad90c728ec120c52c5af9b9ef82c77d87487e997559
         // line 5
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
-        <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
+        <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM\" crossorigin=\"anonymous\">
         ";
         // line 8
         echo "        ";
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 11
+        // line 50
         echo "
         ";
-        // line 12
+        // line 51
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 15
-        echo "    </head>
+        // line 54
+        echo "        <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js\" integrity=\"sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r\" crossorigin=\"anonymous\"></script>
+        <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js\" integrity=\"sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS\" crossorigin=\"anonymous\"></script>
+        <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz\" crossorigin=\"anonymous\"></script>
+
+    </head>
     <body>
         ";
-        // line 17
+        // line 60
         $this->displayBlock('body', $context, $blocks);
-        // line 18
+        // line 61
         echo "    </body>
 </html>
 ";
@@ -90,7 +94,7 @@ class __TwigTemplate_aa09839417eb68edad90c728ec120c52c5af9b9ef82c77d87487e997559
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Welcome!";
+        echo "BackOffice ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -110,9 +114,46 @@ class __TwigTemplate_aa09839417eb68edad90c728ec120c52c5af9b9ef82c77d87487e997559
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
         // line 9
-        echo "            ";
-        echo twig_escape_filter($this->env, $this->env->getFunction('encore_entry_link_tags')->getCallable()("app"), "html", null, true);
-        echo "
+        echo "                <nav class=\"navbar navbar-expand-lg bg-primary\">
+        <div class=\"container-fluid\">
+            <a class=\"navbar-brand\" href=\"#\">BackOffice</a>
+            <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+            <span class=\"navbar-toggler-icon\"></span>
+            </button>
+            <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
+            <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">
+                <li class=\"nav-item\">
+                <a class=\"nav-link active\" aria-current=\"page\" href=\"#\">Equipes</a>
+                </li>
+                <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"#\">Joueurs</a>
+                </li>
+                <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"#\">Utilisateurs</a>
+                </li>
+
+                <li class=\"nav-item dropdown\">
+                <a class=\"nav-link dropdown-toggle\" href=\"#\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
+                    Dropdown
+                </a>
+                <ul class=\"dropdown-menu\">
+                    <li><a class=\"dropdown-item\" href=\"#\">Action</a></li>
+                    <li><a class=\"dropdown-item\" href=\"#\">Another action</a></li>
+                    <li><hr class=\"dropdown-divider\"></li>
+                    <li><a class=\"dropdown-item\" href=\"#\">Something else here</a></li>
+                </ul>
+                </li>
+                <li class=\"nav-item\">
+                <a class=\"nav-link disabled\">Disabled</a>
+                </li>
+            </ul>
+            <form class=\"d-flex\" role=\"search\">
+                <input class=\"form-control me-2\" type=\"search\" placeholder=\"Recherche\" aria-label=\"Search\">
+                <button class=\"btn btn-outline-success\" type=\"submit\">Recherche</button>
+            </form>
+            </div>
+        </div>
+        </nav>
         ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -122,7 +163,7 @@ class __TwigTemplate_aa09839417eb68edad90c728ec120c52c5af9b9ef82c77d87487e997559
 
     }
 
-    // line 12
+    // line 51
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -132,7 +173,7 @@ class __TwigTemplate_aa09839417eb68edad90c728ec120c52c5af9b9ef82c77d87487e997559
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 13
+        // line 52
         echo "            ";
         echo twig_escape_filter($this->env, $this->env->getFunction('encore_entry_script_tags')->getCallable()("app"), "html", null, true);
         echo "
@@ -145,7 +186,7 @@ class __TwigTemplate_aa09839417eb68edad90c728ec120c52c5af9b9ef82c77d87487e997559
 
     }
 
-    // line 17
+    // line 60
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -170,7 +211,7 @@ class __TwigTemplate_aa09839417eb68edad90c728ec120c52c5af9b9ef82c77d87487e997559
 
     public function getDebugInfo()
     {
-        return array (  149 => 17,  136 => 13,  126 => 12,  113 => 9,  103 => 8,  84 => 5,  72 => 18,  70 => 17,  66 => 15,  64 => 12,  61 => 11,  58 => 8,  53 => 5,  47 => 1,);
+        return array (  190 => 60,  177 => 52,  167 => 51,  117 => 9,  107 => 8,  88 => 5,  76 => 61,  74 => 60,  66 => 54,  64 => 51,  61 => 50,  58 => 8,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -179,21 +220,64 @@ class __TwigTemplate_aa09839417eb68edad90c728ec120c52c5af9b9ef82c77d87487e997559
 <html>
     <head>
         <meta charset=\"UTF-8\">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
+        <title>{% block title %}BackOffice {% endblock %}</title>
+        <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM\" crossorigin=\"anonymous\">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
+                <nav class=\"navbar navbar-expand-lg bg-primary\">
+        <div class=\"container-fluid\">
+            <a class=\"navbar-brand\" href=\"#\">BackOffice</a>
+            <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+            <span class=\"navbar-toggler-icon\"></span>
+            </button>
+            <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
+            <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">
+                <li class=\"nav-item\">
+                <a class=\"nav-link active\" aria-current=\"page\" href=\"#\">Equipes</a>
+                </li>
+                <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"#\">Joueurs</a>
+                </li>
+                <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"#\">Utilisateurs</a>
+                </li>
+
+                <li class=\"nav-item dropdown\">
+                <a class=\"nav-link dropdown-toggle\" href=\"#\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
+                    Dropdown
+                </a>
+                <ul class=\"dropdown-menu\">
+                    <li><a class=\"dropdown-item\" href=\"#\">Action</a></li>
+                    <li><a class=\"dropdown-item\" href=\"#\">Another action</a></li>
+                    <li><hr class=\"dropdown-divider\"></li>
+                    <li><a class=\"dropdown-item\" href=\"#\">Something else here</a></li>
+                </ul>
+                </li>
+                <li class=\"nav-item\">
+                <a class=\"nav-link disabled\">Disabled</a>
+                </li>
+            </ul>
+            <form class=\"d-flex\" role=\"search\">
+                <input class=\"form-control me-2\" type=\"search\" placeholder=\"Recherche\" aria-label=\"Search\">
+                <button class=\"btn btn-outline-success\" type=\"submit\">Recherche</button>
+            </form>
+            </div>
+        </div>
+        </nav>
         {% endblock %}
 
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
+        <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js\" integrity=\"sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r\" crossorigin=\"anonymous\"></script>
+        <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js\" integrity=\"sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS\" crossorigin=\"anonymous\"></script>
+        <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz\" crossorigin=\"anonymous\"></script>
+
     </head>
     <body>
         {% block body %}{% endblock %}
     </body>
 </html>
-", "base.html.twig", "/var/www/html/projet-album-panini-digital/projet-album-panini-digital-back/templates/base.html.twig");
+", "base.html.twig", "/var/www/html/Apothéose-APD/projet-album-panini-digital-back/templates/base.html.twig");
     }
 }
