@@ -710,6 +710,6 @@ class __TwigTemplate_4e12b61f013305d12c047ed61dc54ad3db6f8ce93a6703db92955b39532
         <td class=\"font-normal\">{{ migration.execution_time|default('n/a') }}</td>
     </tr>
 {% endmacro %}
-", "@DoctrineMigrations/Collector/migrations.html.twig", "/var/www/html/Apothéose-APD/projet-album-panini-digital-back/vendor/doctrine/doctrine-migrations-bundle/Resources/views/Collector/migrations.html.twig");
+", "@DoctrineMigrations/Collector/migrations.html.twig", "/var/www/html/Symfony/projet-album-panini-digital-back/vendor/doctrine/doctrine-migrations-bundle/Resources/views/Collector/migrations.html.twig");
     }
 }
