@@ -186,10 +186,10 @@ return [[
 '[C]App%5CEntity%5CPlayer%23setTeam' => 1,
 'App%5CEntity%5CPlayer%23getId' => 0,
 '[C]App%5CEntity%5CPlayer%23getId' => 1,
-'App%5CEntity%5CPlayer%23getFirstName' => 0,
-'[C]App%5CEntity%5CPlayer%23getFirstName' => 1,
-'App%5CEntity%5CPlayer%23setFirstName' => 0,
-'[C]App%5CEntity%5CPlayer%23setFirstName' => 1,
+'App%5CEntity%5CPlayer%23getFirstname' => 0,
+'[C]App%5CEntity%5CPlayer%23getFirstname' => 1,
+'App%5CEntity%5CPlayer%23setFirstname' => 0,
+'[C]App%5CEntity%5CPlayer%23setFirstname' => 1,
 'App%5CEntity%5CPlayer%23getLastname' => 0,
 '[C]App%5CEntity%5CPlayer%23getLastname' => 1,
 'App%5CEntity%5CPlayer%23setLastname' => 0,
@@ -316,14 +316,6 @@ return [[
 '[C]App%5CEntity%5CUser%23getPassword' => 1,
 'App%5CEntity%5CUser%23setPassword' => 0,
 '[C]App%5CEntity%5CUser%23setPassword' => 1,
-'App%5CEntity%5CUser%23getCreatedAt' => 0,
-'[C]App%5CEntity%5CUser%23getCreatedAt' => 1,
-'App%5CEntity%5CUser%23setCreatedAt' => 0,
-'[C]App%5CEntity%5CUser%23setCreatedAt' => 1,
-'App%5CEntity%5CUser%23getUpdatedAt' => 0,
-'[C]App%5CEntity%5CUser%23getUpdatedAt' => 1,
-'App%5CEntity%5CUser%23setUpdatedAt' => 0,
-'[C]App%5CEntity%5CUser%23setUpdatedAt' => 1,
 'App%5CEntity%5CUser%23getPlayers' => 0,
 '[C]App%5CEntity%5CUser%23getPlayers' => 1,
 'App%5CEntity%5CUser%23addPlayer' => 0,
@@ -334,7 +326,7 @@ return [[
 '[C]App%5CEntity%5CUser%24id' => 1,
 'App%5CEntity%5CUser%24name' => 22,
 '[C]App%5CEntity%5CUser%24name' => 1,
-'App%5CEntity%5CUser%24role' => 22,
+'App%5CEntity%5CUser%24role' => 37,
 '[C]App%5CEntity%5CUser%24role' => 1,
 'App%5CEntity%5CUser%24avatar' => 23,
 '[C]App%5CEntity%5CUser%24avatar' => 1,
@@ -342,11 +334,7 @@ return [[
 '[C]App%5CEntity%5CUser%24email' => 1,
 'App%5CEntity%5CUser%24password' => 22,
 '[C]App%5CEntity%5CUser%24password' => 1,
-'App%5CEntity%5CUser%24created_at' => 24,
-'[C]App%5CEntity%5CUser%24created_at' => 1,
-'App%5CEntity%5CUser%24updated_at' => 24,
-'[C]App%5CEntity%5CUser%24updated_at' => 1,
-'App%5CEntity%5CUser%24players' => 37,
+'App%5CEntity%5CUser%24players' => 38,
 '[C]App%5CEntity%5CUser%24players' => 1,
 'Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController' => 0,
 '[C]Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController' => 1,
@@ -894,7 +882,7 @@ return [[
 ], [
 
 0 => [],
-1 => 1686559850,
+1 => 1686578983,
 2 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
@@ -1775,6 +1763,31 @@ return [[
     );
 },
 37 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
+        ],
+        null,
+        [
+            'stdClass' => [
+                'type' => [
+                    'json',
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+38 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\ManyToMany'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ManyToMany')),

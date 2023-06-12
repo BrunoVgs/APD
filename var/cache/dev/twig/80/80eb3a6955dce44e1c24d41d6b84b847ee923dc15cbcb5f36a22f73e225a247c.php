@@ -413,6 +413,6 @@ class __TwigTemplate_d7edf587ae726b75d0ef8657353eebb1aeabe62a02afd2d7b12fb7bdef5
         </div>
     {% endfor %}
 {% endblock %}
-", "@Debug/Profiler/dump.html.twig", "/var/www/html/projet-album-panini-digital/projet-album-panini-digital-back/vendor/symfony/debug-bundle/Resources/views/Profiler/dump.html.twig");
+", "@Debug/Profiler/dump.html.twig", "/var/www/html/Symfony/projet-album-panini-digital-back/vendor/symfony/debug-bundle/Resources/views/Profiler/dump.html.twig");
     }
 }

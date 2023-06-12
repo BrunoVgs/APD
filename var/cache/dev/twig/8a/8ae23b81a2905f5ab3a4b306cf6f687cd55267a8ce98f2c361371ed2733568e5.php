@@ -479,6 +479,6 @@ class __TwigTemplate_f2917dbfed19886fe5b4b82bb26b28af41d919c46938b4d9dd4e05dda7e
         </div>
     {% endfor %}
 {% endblock %}
-", "@WebProfiler/Collector/validator.html.twig", "/var/www/html/projet-album-panini-digital/projet-album-panini-digital-back/vendor/symfony/web-profiler-bundle/Resources/views/Collector/validator.html.twig");
+", "@WebProfiler/Collector/validator.html.twig", "/var/www/html/Symfony/projet-album-panini-digital-back/vendor/symfony/web-profiler-bundle/Resources/views/Collector/validator.html.twig");
     }
 }
