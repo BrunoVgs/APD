@@ -8,10 +8,26 @@
 return [
     false, // $matchHost
     [ // $staticRoutes
+        '/admin/league' => [
+            [['_route' => 'show league', '_controller' => 'App\\Controller\\LeagueController::index'], null, ['GET' => 0], null, false, false, null],
+            [['_route' => 'add league', '_controller' => 'App\\Controller\\LeagueController::addLeague'], null, ['POST' => 0], null, false, false, null],
+        ],
+        '/admin/league/{id]' => [
+            [['_route' => 'update league', '_controller' => 'App\\Controller\\LeagueController::updateLeague'], null, ['PUT' => 0], null, false, false, null],
+            [['_route' => 'delete league', '_controller' => 'App\\Controller\\LeagueController::deleteLeague'], null, ['DELETE' => 0], null, false, false, null],
+        ],
         '/admin' => [[['_route' => 'app_back_default', '_controller' => 'App\\Controller\\MainController::index'], null, null, null, false, false, null]],
         '/admin/players' => [[['_route' => 'admin_players', '_controller' => 'App\\Controller\\PlayerController::add'], null, ['POST' => 0], null, false, false, null]],
         '/admin/equipes' => [[['_route' => 'app_back_equipes', '_controller' => 'App\\Controller\\TeamController::index'], null, ['GET' => 0], null, false, false, null]],
         '/admin/new/equipe' => [[['_route' => 'new', '_controller' => 'App\\Controller\\TeamController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/admin/users' => [
+            [['_route' => 'show users', '_controller' => 'App\\Controller\\UserController::index'], null, ['GET' => 0], null, false, false, null],
+            [['_route' => 'add users', '_controller' => 'App\\Controller\\UserController::addUsers'], null, ['POST' => 0], null, false, false, null],
+        ],
+        '/admin/users/{id]' => [
+            [['_route' => 'app_user_updateusers', '_controller' => 'App\\Controller\\UserController::updateUsers'], null, ['PUT' => 0], null, false, false, null],
+            [['_route' => 'app_user_deleteusers', '_controller' => 'App\\Controller\\UserController::deleteUsers'], null, ['DELETE' => 0], null, false, false, null],
+        ],
         '/_profiler' => [[['_route' => '_profiler_home', '_controller' => 'web_profiler.controller.profiler::homeAction'], null, null, null, true, false, null]],
         '/_profiler/search' => [[['_route' => '_profiler_search', '_controller' => 'web_profiler.controller.profiler::searchAction'], null, null, null, false, false, null]],
         '/_profiler/search_bar' => [[['_route' => '_profiler_search_bar', '_controller' => 'web_profiler.controller.profiler::searchBarAction'], null, null, null, false, false, null]],

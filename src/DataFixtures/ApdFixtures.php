@@ -5,10 +5,11 @@ namespace App\DataFixtures;
 use App\Entity\League;
 use App\Entity\Team;
 use App\Entity\Player;
+use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
-class PlayerFixtures extends Fixture
+class ApdFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
@@ -138,6 +139,49 @@ class PlayerFixtures extends Fixture
         $player10->setCreatedAtValue();
         $manager->persist($player10);
 
+        
+
+        // TODO : creation de 3 utilisateurs avec pour chacun un rôle différent.
+
+        $admin = new User();
+        $admin->setName("administrateur");
+        $admin->setRole(['ROLE_ADMIN']);
+        $admin->setAvatar("https://picsum.photos/200");
+        $admin->setEmail("admin@admin.com");
+        $admin->setPassword('$2y$13$C93npTTOPdbIyOxpb8QRtePRknHiazeYnivDZ4GWd4bk5uRB3TbUi');
+        $admin->addPlayer($player1);
+       
+        $admin->addPlayer($player9);
+
+        $manager->persist($admin);
+
+        $managerUser = new User();
+        $managerUser->setName("manageur");
+        $managerUser->setRole(['ROLE_MANAGER']);
+        $managerUser->setAvatar("https://picsum.photos/200");
+        $managerUser->setEmail("manager@manager.com");
+        $managerUser->setPassword('$2y$13$x2y1i3Vnmx0ccnoHvKYxyeCIRUUtNlXfmW3zaovmF2vW7C22RanBu');
+        $managerUser->addPlayer($player2);
+        $managerUser->addPlayer($player8);
+
+        $manager->persist($managerUser);
+
+        $user = new User;
+        $user->setName("utilisateur");
+        $user->setRole(['ROLE_USER']);
+        $user->setAvatar("https://picsum.photos/200");
+        $user->setEmail("user@user.com");
+        $user->setPassword('$2y$13$4cXrYaLAn2X7Y7SZm5UQpu0u44yofmr5429CnmLMgO1DHYqrRekJK');
+        $user->addPlayer($player1);
+        $user->addPlayer( $player5);
+        
+        $manager->persist($user);
+
+
         $manager->flush();
+
+
     }
+    
+
 }
