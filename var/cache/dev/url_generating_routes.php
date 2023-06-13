@@ -7,6 +7,8 @@ return [
     'app_api_player_findplayer' => [['id'], ['_controller' => 'App\\Controller\\Api\\PlayerController::findPlayer'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/api/player']], [], [], []],
     'app_api_team_listteams' => [[], ['_controller' => 'App\\Controller\\Api\\TeamController::listTeams'], [], [['text', '/api/teams']], [], [], []],
     'app_api_team_findteam' => [['id'], ['_controller' => 'App\\Controller\\Api\\TeamController::findTeam'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/api/team']], [], [], []],
+    'app_api_user_listuser' => [[], ['_controller' => 'App\\Controller\\Api\\UserController::listUser'], [], [['text', '/api/users']], [], [], []],
+    'app_api_user_finduser' => [['id'], ['_controller' => 'App\\Controller\\Api\\UserController::findUser'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/api/user']], [], [], []],
     'show league' => [[], ['_controller' => 'App\\Controller\\LeagueController::index'], [], [['text', '/admin/league']], [], [], []],
     'add league' => [[], ['_controller' => 'App\\Controller\\LeagueController::addLeague'], [], [['text', '/admin/league']], [], [], []],
     'update league' => [[], ['_controller' => 'App\\Controller\\LeagueController::updateLeague'], ['id' => '\\d+'], [['text', '/admin/league/{id]']], [], [], []],
