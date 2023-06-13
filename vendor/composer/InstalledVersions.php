@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'e90848c3a11041e378662728580c8f239d87e927',
+    'reference' => '11bddc148ceea8d2fe1bc93d54876eab2c493af7',
     'name' => '__root__',
   ),
   'versions' => 
@@ -42,7 +42,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'e90848c3a11041e378662728580c8f239d87e927',
+      'reference' => '11bddc148ceea8d2fe1bc93d54876eab2c493af7',
     ),
     'doctrine/annotations' => 
     array (
@@ -249,6 +249,20 @@ private static $installed = array (
         0 => '^2.1',
       ),
     ),
+    'php-http/async-client-implementation' => 
+    array (
+      'provided' => 
+      array (
+        0 => '*',
+      ),
+    ),
+    'php-http/client-implementation' => 
+    array (
+      'provided' => 
+      array (
+        0 => '*',
+      ),
+    ),
     'psr/cache' => 
     array (
       'pretty_version' => '1.0.1',
@@ -291,6 +305,13 @@ private static $installed = array (
       'reference' => 'dbefd12671e8a14ec7f180cab83036ed26714bb0',
     ),
     'psr/event-dispatcher-implementation' => 
+    array (
+      'provided' => 
+      array (
+        0 => '1.0',
+      ),
+    ),
+    'psr/http-client-implementation' => 
     array (
       'provided' => 
       array (
@@ -504,6 +525,31 @@ private static $installed = array (
       array (
       ),
       'reference' => 'c06a56a47817d29318aaace1c655cbde16c998e8',
+    ),
+    'symfony/http-client' => 
+    array (
+      'pretty_version' => 'v5.4.24',
+      'version' => '5.4.24.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '9e89ac4c9dfe29f4ed2b10a36e62720286632ad6',
+    ),
+    'symfony/http-client-contracts' => 
+    array (
+      'pretty_version' => 'v2.5.2',
+      'version' => '2.5.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'ba6a9f0e8f3edd190520ee3b9a958596b6ca2e70',
+    ),
+    'symfony/http-client-implementation' => 
+    array (
+      'provided' => 
+      array (
+        0 => '2.4',
+      ),
     ),
     'symfony/http-foundation' => 
     array (
