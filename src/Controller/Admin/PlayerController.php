@@ -1,25 +1,24 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Admin;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 
-
 /**
- * @Route("/back/user", name="app_back_user_")
+ * @Route("/back/player", name="app_back_player_")
  */
-class UserController extends AbstractController
+class PlayerController extends AbstractController
 {
     /**
-     * @Route("/", name="index", methods={"GET"})
+     * @Route("/", name="index" methods={"GET"})
      */
     public function index(): Response
     {
-        return $this->render('user/index.html.twig', [
-          
+        return $this->render('player/index.html.twig', [
+            
         ]);
     }
 
@@ -31,7 +30,7 @@ class UserController extends AbstractController
     public function new() : Response 
 
     {
-        return $this->render('user/new.html.twig', [
+        return $this->render('player/new.html.twig', [
 
         ]);
     }
@@ -44,7 +43,7 @@ class UserController extends AbstractController
     public function show() :Response
 
     {
-        return $this->render('user/show.html.twig', [
+        return $this->render('player/show.html.twig', [
 
         ]);
     }
@@ -54,20 +53,18 @@ class UserController extends AbstractController
      */
     public function edit()
     {
-        return $this->render('user/edit.html.twig', [
+        return $this->render('player/edit.html.twig', [
 
         ]);
 
     }
 
     /**
-     * 
-     *
      * @Route("/{id}", name="delete", methods={"POST"})
      */
     public function delete() 
     {
-        return $this->render('user/delete.html.twig', [
+        return $this->render('player/delete.html.twig', [
 
         ]);
     }

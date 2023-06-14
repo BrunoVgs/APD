@@ -1,35 +1,37 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Admin;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 
+
 /**
- *  @Route("/back/team", name="app_back_team_")
+ * @Route("/back/user", name="app_back_user_")
  */
-class TeamController extends AbstractController
+class UserController extends AbstractController
 {
     /**
      * @Route("/", name="index", methods={"GET"})
      */
     public function index(): Response
     {
-        return $this->render('team/index.html.twig', [
-            
+        return $this->render('user/index.html.twig', [
+          
         ]);
     }
 
     /**
-     * function d'ajout d'une equipe
-     *
-     * @Route("/new", name="new", methods={"GET", "POST"})
+     * 
+     * @Route("/new", name="new", methods={"GET", "POST"})   
+     * 
      */
-    public function new() : Response
+    public function new() : Response 
+
     {
-        return $this->render('team/new.html.twig', [
+        return $this->render('user/new.html.twig', [
 
         ]);
     }
@@ -37,11 +39,12 @@ class TeamController extends AbstractController
     /**
      * Undocumented function
      *
-     * @Route("/{id}", name="show", methods={"GET"})
+     * @Route ("/{id}", name="show", methods={"GET"})
      */
-    public function show():Response
+    public function show() :Response
+
     {
-        return $this->render('team/show.html.twig', [
+        return $this->render('user/show.html.twig', [
 
         ]);
     }
@@ -51,11 +54,12 @@ class TeamController extends AbstractController
      */
     public function edit()
     {
-        return $this->render('team/edit.html.twig', [
+        return $this->render('user/edit.html.twig', [
 
         ]);
 
     }
+
     /**
      * 
      *
@@ -63,7 +67,7 @@ class TeamController extends AbstractController
      */
     public function delete() 
     {
-        return $this->render('team/delete.html.twig', [
+        return $this->render('user/delete.html.twig', [
 
         ]);
     }

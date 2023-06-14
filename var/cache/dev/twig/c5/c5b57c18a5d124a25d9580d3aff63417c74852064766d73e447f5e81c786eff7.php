@@ -434,6 +434,6 @@ class __TwigTemplate_8aacf767c688ea40125a4f7f70729f53dc00aa0103276adee5fa082007a
     {%- set widget_class = widget_class|default('mr-2') -%}
     {{- parent() -}}
 {%- endblock radio_widget -%}
-", "tailwind_2_layout.html.twig", "/var/www/html/Symfony/projet-album-panini-digital-back/vendor/symfony/twig-bridge/Resources/views/Form/tailwind_2_layout.html.twig");
+", "tailwind_2_layout.html.twig", "/var/www/html/Apothéose-APD/projet-album-panini-digital-back/vendor/symfony/twig-bridge/Resources/views/Form/tailwind_2_layout.html.twig");
     }
 }

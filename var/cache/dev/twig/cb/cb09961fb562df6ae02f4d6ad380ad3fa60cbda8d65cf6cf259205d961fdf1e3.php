@@ -843,6 +843,6 @@ class __TwigTemplate_9a6792ee86fe0c9c177bfbe3551740b2dd254d9acdb1f42d366e8e51339
     </table>
     {% endfor %}
 {% endmacro %}
-", "@WebProfiler/Collector/messenger.html.twig", "/var/www/html/Symfony/projet-album-panini-digital-back/vendor/symfony/web-profiler-bundle/Resources/views/Collector/messenger.html.twig");
+", "@WebProfiler/Collector/messenger.html.twig", "/var/www/html/Apothéose-APD/projet-album-panini-digital-back/vendor/symfony/web-profiler-bundle/Resources/views/Collector/messenger.html.twig");
     }
 }

@@ -171,6 +171,6 @@ class __TwigTemplate_3e76cf00b2858bef23e501841f1998c2b35ac99e96fe2992522fb602321
         {%- endfor -%}
     </pre>
 {% endif %}
-", "@Doctrine/Collector/explain.html.twig", "/var/www/html/Symfony/projet-album-panini-digital-back/vendor/doctrine/doctrine-bundle/Resources/views/Collector/explain.html.twig");
+", "@Doctrine/Collector/explain.html.twig", "/var/www/html/Apothéose-APD/projet-album-panini-digital-back/vendor/doctrine/doctrine-bundle/Resources/views/Collector/explain.html.twig");
     }
 }
