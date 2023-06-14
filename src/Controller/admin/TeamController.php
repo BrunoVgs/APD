@@ -7,11 +7,13 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 
-
+/**
+ *  @Route("/back/team", name="app_back_team_")
+ */
 class TeamController extends AbstractController
 {
     /**
-     * @Route("/admin/equipes", name="app_back_equipes", methods={"GET"})
+     * @Route("/", name="index", methods={"GET"})
      */
     public function index(): Response
     {
@@ -23,7 +25,7 @@ class TeamController extends AbstractController
     /**
      * function d'ajout d'une equipe
      *
-     * @Route("/admin/new/equipe", name="new", methods={"GET", "POST"})
+     * @Route("/new", name="new", methods={"GET", "POST"})
      */
     public function new() : Response
     {
@@ -35,7 +37,7 @@ class TeamController extends AbstractController
     /**
      * Undocumented function
      *
-     * @Route("/admin/equipe/{id}", name="show", methods={"GET"})
+     * @Route("/{id}", name="show", methods={"GET"})
      */
     public function show():Response
     {
@@ -45,7 +47,7 @@ class TeamController extends AbstractController
     }
 
     /**
-     * @Route("/admin/equipe/{id}/edit", name="edit", methods={"GET", "POST"})
+     * @Route("/{id}/edit", name="edit", methods={"GET", "POST"})
      */
     public function edit()
     {
@@ -57,7 +59,7 @@ class TeamController extends AbstractController
     /**
      * 
      *
-     * @Route("/admin/equipe/{id}", name="delete", methods={"POST"})
+     * @Route("/{id}", name="delete", methods={"POST"})
      */
     public function delete() 
     {

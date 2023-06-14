@@ -125,19 +125,19 @@ class __TwigTemplate_aa09839417eb68edad90c728ec120c52c5af9b9ef82c77d87487e997559
                 <li class=\"nav-item\">
                 <a class=\"nav-link\" aria-current=\"page\" href=\"";
         // line 18
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_back_equipes");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_back_team_index");
         echo "\">Equipes</a>
                 </li>
                 <li class=\"nav-item\">
                 <a class=\"nav-link \" href=\"";
         // line 21
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_back_players");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_back_player_index");
         echo "\">Joueurs</a>
                 </li>
                 <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"";
         // line 24
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_back_users");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_back_user_index");
         echo "\">Utilisateurs</a>
                 </li>
                 <li class=\"nav-item\">
@@ -238,13 +238,13 @@ class __TwigTemplate_aa09839417eb68edad90c728ec120c52c5af9b9ef82c77d87487e997559
             <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
             <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">
                 <li class=\"nav-item\">
-                <a class=\"nav-link\" aria-current=\"page\" href=\"{{path('app_back_equipes')}}\">Equipes</a>
+                <a class=\"nav-link\" aria-current=\"page\" href=\"{{path('app_back_team_index')}}\">Equipes</a>
                 </li>
                 <li class=\"nav-item\">
-                <a class=\"nav-link \" href=\"{{path('app_back_players')}}\">Joueurs</a>
+                <a class=\"nav-link \" href=\"{{path('app_back_player_index')}}\">Joueurs</a>
                 </li>
                 <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"{{path('app_back_users')}}\">Utilisateurs</a>
+                <a class=\"nav-link\" href=\"{{path('app_back_user_index')}}\">Utilisateurs</a>
                 </li>
                 <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"\">Articles</a>
