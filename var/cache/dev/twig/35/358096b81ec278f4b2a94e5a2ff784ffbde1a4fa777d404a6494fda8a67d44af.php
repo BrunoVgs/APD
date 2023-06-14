@@ -57,12 +57,12 @@ class __TwigTemplate_aa09839417eb68edad90c728ec120c52c5af9b9ef82c77d87487e997559
         // line 8
         echo "        ";
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 50
+        // line 46
         echo "
         ";
-        // line 51
+        // line 47
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 54
+        // line 50
         echo "        <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js\" integrity=\"sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r\" crossorigin=\"anonymous\"></script>
         <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js\" integrity=\"sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS\" crossorigin=\"anonymous\"></script>
         <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz\" crossorigin=\"anonymous\"></script>
@@ -70,9 +70,9 @@ class __TwigTemplate_aa09839417eb68edad90c728ec120c52c5af9b9ef82c77d87487e997559
     </head>
     <body>
         ";
-        // line 60
+        // line 56
         $this->displayBlock('body', $context, $blocks);
-        // line 61
+        // line 57
         echo "    </body>
 </html>
 ";
@@ -123,28 +123,33 @@ class __TwigTemplate_aa09839417eb68edad90c728ec120c52c5af9b9ef82c77d87487e997559
             <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
             <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">
                 <li class=\"nav-item\">
-                <a class=\"nav-link active\" aria-current=\"page\" href=\"#\">Equipes</a>
+                <a class=\"nav-link\" aria-current=\"page\" href=\"";
+        // line 18
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_back_equipes");
+        echo "\">Equipes</a>
                 </li>
                 <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">Joueurs</a>
+                <a class=\"nav-link \" href=\"";
+        // line 21
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_back_players");
+        echo "\">Joueurs</a>
                 </li>
                 <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">Utilisateurs</a>
+                <a class=\"nav-link\" href=\"";
+        // line 24
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_back_users");
+        echo "\">Utilisateurs</a>
+                </li>
+                <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"\">Articles</a>
                 </li>
 
-                <li class=\"nav-item dropdown\">
-                <a class=\"nav-link dropdown-toggle\" href=\"#\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
-                    Dropdown
-                </a>
                 <ul class=\"dropdown-menu\">
                     <li><a class=\"dropdown-item\" href=\"#\">Action</a></li>
                     <li><a class=\"dropdown-item\" href=\"#\">Another action</a></li>
                     <li><hr class=\"dropdown-divider\"></li>
                     <li><a class=\"dropdown-item\" href=\"#\">Something else here</a></li>
                 </ul>
-                </li>
-                <li class=\"nav-item\">
-                <a class=\"nav-link disabled\">Disabled</a>
                 </li>
             </ul>
             <form class=\"d-flex\" role=\"search\">
@@ -163,7 +168,7 @@ class __TwigTemplate_aa09839417eb68edad90c728ec120c52c5af9b9ef82c77d87487e997559
 
     }
 
-    // line 51
+    // line 47
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -173,7 +178,7 @@ class __TwigTemplate_aa09839417eb68edad90c728ec120c52c5af9b9ef82c77d87487e997559
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 52
+        // line 48
         echo "            ";
         echo twig_escape_filter($this->env, $this->env->getFunction('encore_entry_script_tags')->getCallable()("app"), "html", null, true);
         echo "
@@ -186,7 +191,7 @@ class __TwigTemplate_aa09839417eb68edad90c728ec120c52c5af9b9ef82c77d87487e997559
 
     }
 
-    // line 60
+    // line 56
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -211,7 +216,7 @@ class __TwigTemplate_aa09839417eb68edad90c728ec120c52c5af9b9ef82c77d87487e997559
 
     public function getDebugInfo()
     {
-        return array (  190 => 60,  177 => 52,  167 => 51,  117 => 9,  107 => 8,  88 => 5,  76 => 61,  74 => 60,  66 => 54,  64 => 51,  61 => 50,  58 => 8,  53 => 5,  47 => 1,);
+        return array (  195 => 56,  182 => 48,  172 => 47,  140 => 24,  134 => 21,  128 => 18,  117 => 9,  107 => 8,  88 => 5,  76 => 57,  74 => 56,  66 => 50,  64 => 47,  61 => 46,  58 => 8,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -233,28 +238,24 @@ class __TwigTemplate_aa09839417eb68edad90c728ec120c52c5af9b9ef82c77d87487e997559
             <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
             <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">
                 <li class=\"nav-item\">
-                <a class=\"nav-link active\" aria-current=\"page\" href=\"#\">Equipes</a>
+                <a class=\"nav-link\" aria-current=\"page\" href=\"{{path('app_back_equipes')}}\">Equipes</a>
                 </li>
                 <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">Joueurs</a>
+                <a class=\"nav-link \" href=\"{{path('app_back_players')}}\">Joueurs</a>
                 </li>
                 <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">Utilisateurs</a>
+                <a class=\"nav-link\" href=\"{{path('app_back_users')}}\">Utilisateurs</a>
+                </li>
+                <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"\">Articles</a>
                 </li>
 
-                <li class=\"nav-item dropdown\">
-                <a class=\"nav-link dropdown-toggle\" href=\"#\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
-                    Dropdown
-                </a>
                 <ul class=\"dropdown-menu\">
                     <li><a class=\"dropdown-item\" href=\"#\">Action</a></li>
                     <li><a class=\"dropdown-item\" href=\"#\">Another action</a></li>
                     <li><hr class=\"dropdown-divider\"></li>
                     <li><a class=\"dropdown-item\" href=\"#\">Something else here</a></li>
                 </ul>
-                </li>
-                <li class=\"nav-item\">
-                <a class=\"nav-link disabled\">Disabled</a>
                 </li>
             </ul>
             <form class=\"d-flex\" role=\"search\">

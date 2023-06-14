@@ -10,7 +10,7 @@ use App\Entity\Player;
 class PlayerController extends AbstractController
 {
     /**
-     * @Route("/admin/players", name="admin_players", methods={"GET"})
+     * @Route("/admin/players", name="app_back_players", methods={"GET"})
      */
     public function player(): Response
     {
@@ -18,7 +18,7 @@ class PlayerController extends AbstractController
     }
 
     /**
-    * @Route("/admin/players", name="admin_players", methods={"POST"})
+    * @Route("/admin/players", name="new", methods={"GET","POST"})
     */
     public function add(): Response
     {
@@ -26,7 +26,7 @@ class PlayerController extends AbstractController
     }
 
     /**
-    * @Route("/admin/player/{id}", name="admin_player_edit", methods={"PUT"})
+    * @Route("/admin/player/{id}", name="edit", methods={"GET", "POST"})
     */
     public function edit(Request $request, $id): Response
     {
@@ -34,13 +34,16 @@ class PlayerController extends AbstractController
     }
 
     /**
-    * @Route("/admin/player/{id}", name="admin_players_delete", methods={"DELETE"})
+    * @Route("/admin/player/{id}", name="delete", methods={"POST"})
     */
     public function delete($id): Response
     {
         return $this->redirectToRoute('admin_players');
     }
 
+    /**
+    * @Route("/admin/player/{id}", name="show", methods={"GET"})
+    */
     public function show(?Player $player): Response
     {
         if ($player === null) {
