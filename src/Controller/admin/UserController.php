@@ -3,52 +3,67 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * Controller Users pour la gestion des utilisateurs via l'espace admin
- */
 class UserController extends AbstractController
 {
     /**
-     * @Route("/admin/users",name="app_back_users", methods={"GET"})
+     * @Route("admin/utilisateurs", name="app_back_user", method={"GET"})
      */
     public function index(): Response
     {
-        return $this->json([
-            'message' => 'Accès à la gestion des utilisateurs!',
-            'path' => 'src/Controller/UserController.php',
-        ]);
-    }
-    /**
-     * @Route("/admin/users",name="add users", methods={"POST"})
-     */
-    public function addUsers(): Response
-    {
-        return $this->json([
-            'message' => 'Ajout d’un utilisateur',
-            'path' => 'src/Controller/UserController.php',
-        ]);
-    }
-     /**
-     * @Route("/admin/users/{id]",methods={"PUT"},requirements={"id"="\d+"})
-     */
-    public function updateUsers(): Response
-    {
-        return $this->json([
-            'message' => 'Modification d’un utilisateur spécifique',
-            'path' => 'src/Controller/UserController.php',
-        ]);
-    }
-      /**
-     * @Route("/admin/users/{id]",methods={"DELETE"},requirements={"id"="\d+"})
-     */
-    public function deleteUsers(): Response
-    {
-        return $this->render('user/edit.html.twig[
-            
+        return $this->render('user/index.html.twig', [
+          
         ]);
     }
 
+    /**
+     * 
+     * @Route("/admin/new/utilisateur", name="new", methods={"GET", "POST"})   
+     * 
+     */
+    public function new() : Response 
+
+    {
+        return $this->render('user/new.html.twig', [
+
+        ]);
+    }
+
+    /**
+     * Undocumented function
+     *
+     * @Route ("/admin/utilisateur/{id}", name="show", methods={"GET"})
+     */
+    public function show() :Response
+
+    {
+        return $this->render('user/show.html.twig', [
+
+        ]);
+    }
+
+    /**
+     * @Route("/admin/utilisateur/{id}/edit", name="edit", methods={"GET", "POST"})
+     */
+    public function edit()
+    {
+        return $this->render('user/edit.html.twig', [
+
+        ]);
+
+    }
+
+    /**
+     * 
+     *
+     * @Route("/admin/utilisateur/{id}", name="delete", methods={"POST"})
+     */
+    public function delete() 
+    {
+        return $this->render('user/delete.html.twig', [
+
+        ]);
+    }
 }

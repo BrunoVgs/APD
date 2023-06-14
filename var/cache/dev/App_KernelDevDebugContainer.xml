@@ -325,11 +325,13 @@
         <argument type="service" id=".service_locator.GNc8e5B.App\Controller\Api\UserController"/>
       </call>
     </service>
-    <service id="App\Controller\admin\LeagueController" class="App\Controller\admin\LeagueController" autowire="true" autoconfigure="true"/>
-    <service id="App\Controller\admin\MainController" class="App\Controller\admin\MainController" autowire="true" autoconfigure="true"/>
-    <service id="App\Controller\admin\PlayerController" class="App\Controller\admin\PlayerController" autowire="true" autoconfigure="true"/>
-    <service id="App\Controller\admin\TeamController" class="App\Controller\admin\TeamController" autowire="true" autoconfigure="true"/>
-    <service id="App\Controller\admin\UserController" class="App\Controller\admin\UserController" autowire="true" autoconfigure="true"/>
+    <service id="App\Controller\UserController" class="App\Controller\UserController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.GNc8e5B.App\Controller\UserController"/>
+      </call>
+    </service>
     <service id="App\DataFixtures\ApdFixtures" class="App\DataFixtures\ApdFixtures" autowire="true" autoconfigure="true">
       <tag name="doctrine.fixture.orm"/>
     </service>
@@ -4468,18 +4470,21 @@
       </call>
     </service>
     <service id="doctrine.migrations.storage.table_storage" class="Doctrine\Migrations\Metadata\Storage\TableMetadataStorageConfiguration"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Api\ArticleController" class="App\Controller\Api\ArticleController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Api\ArticleController" class="App\Controller\Api\ArticleController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\Api\ArticleController" class="App\Controller\Api\ArticleController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Api\PlayerController" class="App\Controller\Api\PlayerController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Api\PlayerController" class="App\Controller\Api\PlayerController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\Api\PlayerController" class="App\Controller\Api\PlayerController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Api\TeamController" class="App\Controller\Api\TeamController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Api\TeamController" class="App\Controller\Api\TeamController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\Api\TeamController" class="App\Controller\Api\TeamController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Api\UserController" class="App\Controller\Api\UserController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Api\UserController" class="App\Controller\Api\UserController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\Api\UserController" class="App\Controller\Api\UserController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\LeagueController" class="App\Controller\LeagueController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\LeagueController" class="App\Controller\LeagueController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\LeagueController" class="App\Controller\LeagueController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\MainController" class="App\Controller\MainController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\MainController" class="App\Controller\MainController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\MainController" class="App\Controller\MainController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\PlayerController" class="App\Controller\PlayerController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\PlayerController" class="App\Controller\PlayerController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\PlayerController" class="App\Controller\PlayerController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\TeamController" class="App\Controller\TeamController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\TeamController" class="App\Controller\TeamController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\TeamController" class="App\Controller\TeamController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\UserController" class="App\Controller\UserController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\UserController" class="App\Controller\UserController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\UserController" class="App\Controller\UserController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\ApdFixtures" class="App\DataFixtures\ApdFixtures" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\DataFixtures\ApdFixtures" class="App\DataFixtures\ApdFixtures" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" abstract="true"/>
