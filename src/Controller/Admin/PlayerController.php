@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class PlayerController extends AbstractController
 {
     /**
-     * @Route("/", name="index" methods={"GET"})
+     * @Route("/", name="index", methods={"GET"})
      */
     public function index(): Response
     {

@@ -307,6 +307,13 @@
         <argument type="service" id=".service_locator.GNc8e5B.App\Controller\Admin\MainController"/>
       </call>
     </service>
+    <service id="App\Controller\Admin\PlayerController" class="App\Controller\Admin\PlayerController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.GNc8e5B.App\Controller\Admin\PlayerController"/>
+      </call>
+    </service>
     <service id="App\Controller\Admin\TeamController" class="App\Controller\Admin\TeamController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -4498,6 +4505,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\MainController" class="App\Controller\Admin\MainController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\MainController" class="App\Controller\Admin\MainController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\MainController" class="App\Controller\Admin\MainController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\PlayerController" class="App\Controller\Admin\PlayerController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\PlayerController" class="App\Controller\Admin\PlayerController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Admin\PlayerController" class="App\Controller\Admin\PlayerController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\TeamController" class="App\Controller\Admin\TeamController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\TeamController" class="App\Controller\Admin\TeamController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\TeamController" class="App\Controller\Admin\TeamController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5021,6 +5031,12 @@
     <service id=".service_locator.GNc8e5B.App\Controller\Admin\MainController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\Admin\MainController"/>
       <argument>App\Controller\Admin\MainController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.GNc8e5B" method="withContext"/>
+    </service>
+    <service id=".service_locator.GNc8e5B.App\Controller\Admin\PlayerController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\PlayerController"/>
+      <argument>App\Controller\Admin\PlayerController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.GNc8e5B" method="withContext"/>
     </service>
