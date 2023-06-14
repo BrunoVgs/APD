@@ -125,6 +125,6 @@ class __TwigTemplate_e42092dfbf37ccbf8db41d755e56a4bae86e91bd7b865635f97bdf7bfde
 .exception-message-wrapper .container {
     min-height: unset;
 }
-", "@WebProfiler/Collector/exception.css.twig", "/var/www/html/Apothéose-APD/projet-album-panini-digital-back/vendor/symfony/web-profiler-bundle/Resources/views/Collector/exception.css.twig");
+", "@WebProfiler/Collector/exception.css.twig", "/var/www/html/Symfony/projet-album-panini-digital-back/vendor/symfony/web-profiler-bundle/Resources/views/Collector/exception.css.twig");
     }
 }

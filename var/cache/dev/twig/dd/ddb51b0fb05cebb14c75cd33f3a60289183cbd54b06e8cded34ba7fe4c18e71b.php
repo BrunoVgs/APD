@@ -482,6 +482,6 @@ class __TwigTemplate_dba209b64a2b3d605a3d2408283d15e89ca26eda923fb7edf69b88ff595
         {% endfor %}
     </table>
 {% endmacro %}
-", "@WebProfiler/Collector/events.html.twig", "/var/www/html/projet-album-panini-digital/projet-album-panini-digital-back/vendor/symfony/web-profiler-bundle/Resources/views/Collector/events.html.twig");
+", "@WebProfiler/Collector/events.html.twig", "/var/www/html/Symfony/projet-album-panini-digital-back/vendor/symfony/web-profiler-bundle/Resources/views/Collector/events.html.twig");
     }
 }
