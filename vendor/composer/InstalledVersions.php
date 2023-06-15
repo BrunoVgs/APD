@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '11bddc148ceea8d2fe1bc93d54876eab2c493af7',
+    'reference' => '8473913e1f1b1a5f323cb1f03bf732774f003e87',
     'name' => '__root__',
   ),
   'versions' => 
@@ -42,7 +42,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '11bddc148ceea8d2fe1bc93d54876eab2c493af7',
+      'reference' => '8473913e1f1b1a5f323cb1f03bf732774f003e87',
     ),
     'doctrine/annotations' => 
     array (
@@ -232,6 +232,42 @@ private static $installed = array (
       array (
       ),
       'reference' => '91aabc066d5620428120800c0eafc0411e441a62',
+    ),
+    'lcobucci/clock' => 
+    array (
+      'pretty_version' => '2.0.0',
+      'version' => '2.0.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '353d83fe2e6ae95745b16b3d911813df6a05bfb3',
+    ),
+    'lcobucci/jwt' => 
+    array (
+      'pretty_version' => '4.3.0',
+      'version' => '4.3.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '4d7de2fe0d51a96418c0d04004986e410e87f6b4',
+    ),
+    'lexik/jwt-authentication-bundle' => 
+    array (
+      'pretty_version' => 'v2.19.0',
+      'version' => '2.19.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '1305d7ec0ee540340d9041bd97659a13a0d1e6ed',
+    ),
+    'namshi/jose' => 
+    array (
+      'pretty_version' => '7.2.3',
+      'version' => '7.2.3.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '89a24d7eb3040e285dd5925fcad992378b82bcff',
     ),
     'nikic/php-parser' => 
     array (
@@ -645,6 +681,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '8ad114f6b39e2c98a8b0e3bd907732c207c2b534',
+    ),
+    'symfony/polyfill-php56' => 
+    array (
+      'pretty_version' => 'v1.20.0',
+      'version' => '1.20.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '54b8cd7e6c1643d78d011f3be89f3ef1f9f4c675',
     ),
     'symfony/polyfill-php72' => 
     array (
