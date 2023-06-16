@@ -10,7 +10,7 @@ return [
     [ // $staticRoutes
         '/back/league' => [[['_route' => 'app_back_league_index', '_controller' => 'App\\Controller\\Admin\\LeagueController::index'], null, ['GET' => 0], null, true, false, null]],
         '/back/league/new' => [[['_route' => 'app_back_league_new', '_controller' => 'App\\Controller\\Admin\\LeagueController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        '/admin' => [[['_route' => 'app_back_default', '_controller' => 'App\\Controller\\Admin\\MainController::index'], null, null, null, false, false, null]],
+        '/' => [[['_route' => 'app_back_default', '_controller' => 'App\\Controller\\Admin\\MainController::index'], null, null, null, false, false, null]],
         '/back/player' => [[['_route' => 'app_back_player_index', '_controller' => 'App\\Controller\\Admin\\PlayerController::index'], null, ['GET' => 0], null, true, false, null]],
         '/back/player/new' => [[['_route' => 'app_back_player_new', '_controller' => 'App\\Controller\\Admin\\PlayerController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/back/team' => [[['_route' => 'app_back_team_index', '_controller' => 'App\\Controller\\Admin\\TeamController::index'], null, ['GET' => 0], null, true, false, null]],

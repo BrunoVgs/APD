@@ -6,6 +6,11 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Controller\\Admin\\LeagueController' => $baseDir . '/src/Controller/Admin/LeagueController.php',
+    'App\\Controller\\Admin\\MainController' => $baseDir . '/src/Controller/Admin/MainController.php',
+    'App\\Controller\\Admin\\PlayerController' => $baseDir . '/src/Controller/Admin/PlayerController.php',
+    'App\\Controller\\Admin\\TeamController' => $baseDir . '/src/Controller/Admin/TeamController.php',
+    'App\\Controller\\Admin\\UserController' => $baseDir . '/src/Controller/Admin/UserController.php',
     'App\\Controller\\Api\\ArticleController' => $baseDir . '/src/Controller/Api/ArticleController.php',
     'App\\Controller\\Api\\PlayerController' => $baseDir . '/src/Controller/Api/PlayerController.php',
     'App\\Controller\\Api\\TeamController' => $baseDir . '/src/Controller/Api/TeamController.php',

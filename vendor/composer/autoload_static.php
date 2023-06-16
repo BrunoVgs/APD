@@ -459,6 +459,11 @@ class ComposerStaticInitf7e7e2d456ced3cdabfafd267a6a13e3
     );
 
     public static $classMap = array (
+        'App\\Controller\\Admin\\LeagueController' => __DIR__ . '/../..' . '/src/Controller/Admin/LeagueController.php',
+        'App\\Controller\\Admin\\MainController' => __DIR__ . '/../..' . '/src/Controller/Admin/MainController.php',
+        'App\\Controller\\Admin\\PlayerController' => __DIR__ . '/../..' . '/src/Controller/Admin/PlayerController.php',
+        'App\\Controller\\Admin\\TeamController' => __DIR__ . '/../..' . '/src/Controller/Admin/TeamController.php',
+        'App\\Controller\\Admin\\UserController' => __DIR__ . '/../..' . '/src/Controller/Admin/UserController.php',
         'App\\Controller\\Api\\ArticleController' => __DIR__ . '/../..' . '/src/Controller/Api/ArticleController.php',
         'App\\Controller\\Api\\PlayerController' => __DIR__ . '/../..' . '/src/Controller/Api/PlayerController.php',
         'App\\Controller\\Api\\TeamController' => __DIR__ . '/../..' . '/src/Controller/Api/TeamController.php',
