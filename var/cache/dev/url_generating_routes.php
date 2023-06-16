@@ -8,7 +8,7 @@ return [
     'app_back_league_show' => [['id'], ['_controller' => 'App\\Controller\\Admin\\LeagueController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/back/league']], [], [], []],
     'app_back_league_edit' => [['id'], ['_controller' => 'App\\Controller\\Admin\\LeagueController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/back/league']], [], [], []],
     'app_back_league_delete' => [['id'], ['_controller' => 'App\\Controller\\Admin\\LeagueController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/back/league']], [], [], []],
-    'app_back_default' => [[], ['_controller' => 'App\\Controller\\Admin\\MainController::index'], [], [['text', '/admin']], [], [], []],
+    'app_back_default' => [[], ['_controller' => 'App\\Controller\\Admin\\MainController::index'], [], [['text', '/']], [], [], []],
     'app_back_player_index' => [[], ['_controller' => 'App\\Controller\\Admin\\PlayerController::index'], [], [['text', '/back/player/']], [], [], []],
     'app_back_player_new' => [[], ['_controller' => 'App\\Controller\\Admin\\PlayerController::new'], [], [['text', '/back/player/new']], [], [], []],
     'app_back_player_show' => [['id'], ['_controller' => 'App\\Controller\\Admin\\PlayerController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/back/player']], [], [], []],
