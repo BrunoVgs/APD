@@ -7,8 +7,8 @@ namespace Composer\Autoload;
 class ComposerStaticInitf7e7e2d456ced3cdabfafd267a6a13e3
 {
     public static $files = array (
-        '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
+        '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
         '23c18046f52bef3eea034657bafda50f' => __DIR__ . '/..' . '/symfony/polyfill-php81/bootstrap.php',
@@ -16,8 +16,8 @@ class ComposerStaticInitf7e7e2d456ced3cdabfafd267a6a13e3
         '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
         'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
-        '6a47392539ca2329373e0d33e1dba053' => __DIR__ . '/..' . '/symfony/polyfill-intl-icu/bootstrap.php',
         'c2aad8997a98dfc4771bdbffea3d62b7' => __DIR__ . '/..' . '/laminas/laminas-code/polyfill/ReflectionEnumPolyfill.php',
+        '6a47392539ca2329373e0d33e1dba053' => __DIR__ . '/..' . '/symfony/polyfill-intl-icu/bootstrap.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -482,6 +482,11 @@ class ComposerStaticInitf7e7e2d456ced3cdabfafd267a6a13e3
     );
 
     public static $classMap = array (
+        'App\\Controller\\Admin\\LeagueController' => __DIR__ . '/../..' . '/src/Controller/Admin/LeagueController.php',
+        'App\\Controller\\Admin\\MainController' => __DIR__ . '/../..' . '/src/Controller/Admin/MainController.php',
+        'App\\Controller\\Admin\\PlayerController' => __DIR__ . '/../..' . '/src/Controller/Admin/PlayerController.php',
+        'App\\Controller\\Admin\\TeamController' => __DIR__ . '/../..' . '/src/Controller/Admin/TeamController.php',
+        'App\\Controller\\Admin\\UserController' => __DIR__ . '/../..' . '/src/Controller/Admin/UserController.php',
         'App\\Controller\\Api\\ArticleController' => __DIR__ . '/../..' . '/src/Controller/Api/ArticleController.php',
         'App\\Controller\\Api\\PlayerController' => __DIR__ . '/../..' . '/src/Controller/Api/PlayerController.php',
         'App\\Controller\\Api\\TeamController' => __DIR__ . '/../..' . '/src/Controller/Api/TeamController.php',
@@ -2094,6 +2099,7 @@ class ComposerStaticInitf7e7e2d456ced3cdabfafd267a6a13e3
         'Faker\\Provider\\nl_BE\\Payment' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_BE/Payment.php',
         'Faker\\Provider\\nl_BE\\Person' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_BE/Person.php',
         'Faker\\Provider\\nl_BE\\PhoneNumber' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_BE/PhoneNumber.php',
+        'Faker\\Provider\\nl_BE\\Text' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_BE/Text.php',
         'Faker\\Provider\\nl_NL\\Address' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_NL/Address.php',
         'Faker\\Provider\\nl_NL\\Color' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_NL/Color.php',
         'Faker\\Provider\\nl_NL\\Company' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_NL/Company.php',
