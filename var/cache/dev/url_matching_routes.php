@@ -8,6 +8,8 @@
 return [
     false, // $matchHost
     [ // $staticRoutes
+        '/back/article' => [[['_route' => 'app_back_article_index', '_controller' => 'App\\Controller\\ArticleController::index'], null, ['GET' => 0], null, true, false, null]],
+        '/back/article/new' => [[['_route' => 'app_back_article_new', '_controller' => 'App\\Controller\\ArticleController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/back/league' => [[['_route' => 'app_back_league_index', '_controller' => 'App\\Controller\\Admin\\LeagueController::index'], null, ['GET' => 0], null, true, false, null]],
         '/back/league/new' => [[['_route' => 'app_back_league_new', '_controller' => 'App\\Controller\\Admin\\LeagueController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/' => [[['_route' => 'app_back_default', '_controller' => 'App\\Controller\\Admin\\MainController::index'], null, null, null, false, false, null]],
@@ -31,74 +33,82 @@ return [
     [ // $regexpList
         0 => '{^(?'
                 .'|/back/(?'
+                    .'|article/([^/]++)(?'
+                        .'|(*:35)'
+                        .'|/edit(*:47)'
+                        .'|(*:54)'
+                    .')'
                     .'|league/([^/]++)(?'
-                        .'|(*:34)'
-                        .'|/edit(*:46)'
-                        .'|(*:53)'
+                        .'|(*:80)'
+                        .'|/edit(*:92)'
+                        .'|(*:99)'
                     .')'
                     .'|player/([^/]++)(?'
-                        .'|(*:79)'
-                        .'|/edit(*:91)'
-                        .'|(*:98)'
+                        .'|(*:125)'
+                        .'|/edit(*:138)'
+                        .'|(*:146)'
                     .')'
                     .'|team/([^/]++)(?'
-                        .'|(*:122)'
-                        .'|/edit(*:135)'
-                        .'|(*:143)'
+                        .'|(*:171)'
+                        .'|/edit(*:184)'
+                        .'|(*:192)'
                     .')'
                     .'|user/([^/]++)(?'
-                        .'|(*:168)'
-                        .'|/edit(*:181)'
-                        .'|(*:189)'
+                        .'|(*:217)'
+                        .'|/edit(*:230)'
+                        .'|(*:238)'
                     .')'
                 .')'
                 .'|/api/(?'
-                    .'|article/([^/]++)(*:223)'
-                    .'|player/([^/]++)(*:246)'
-                    .'|team/([^/]++)(*:267)'
-                    .'|user/([^/]++)(*:288)'
+                    .'|article/([^/]++)(*:272)'
+                    .'|player/([^/]++)(*:295)'
+                    .'|team/([^/]++)(*:316)'
+                    .'|user/([^/]++)(*:337)'
                 .')'
                 .'|/_(?'
-                    .'|error/(\\d+)(?:\\.([^/]++))?(*:328)'
-                    .'|wdt/([^/]++)(*:348)'
+                    .'|error/(\\d+)(?:\\.([^/]++))?(*:377)'
+                    .'|wdt/([^/]++)(*:397)'
                     .'|profiler/([^/]++)(?'
                         .'|/(?'
-                            .'|search/results(*:394)'
-                            .'|router(*:408)'
+                            .'|search/results(*:443)'
+                            .'|router(*:457)'
                             .'|exception(?'
-                                .'|(*:428)'
-                                .'|\\.css(*:441)'
+                                .'|(*:477)'
+                                .'|\\.css(*:490)'
                             .')'
                         .')'
-                        .'|(*:451)'
+                        .'|(*:500)'
                     .')'
                 .')'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
-        34 => [[['_route' => 'app_back_league_show', '_controller' => 'App\\Controller\\Admin\\LeagueController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        46 => [[['_route' => 'app_back_league_edit', '_controller' => 'App\\Controller\\Admin\\LeagueController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        53 => [[['_route' => 'app_back_league_delete', '_controller' => 'App\\Controller\\Admin\\LeagueController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        79 => [[['_route' => 'app_back_player_show', '_controller' => 'App\\Controller\\Admin\\PlayerController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        91 => [[['_route' => 'app_back_player_edit', '_controller' => 'App\\Controller\\Admin\\PlayerController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        98 => [[['_route' => 'app_back_player_delete', '_controller' => 'App\\Controller\\Admin\\PlayerController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        122 => [[['_route' => 'app_back_team_show', '_controller' => 'App\\Controller\\Admin\\TeamController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        135 => [[['_route' => 'app_back_team_edit', '_controller' => 'App\\Controller\\Admin\\TeamController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        143 => [[['_route' => 'app_back_team_delete', '_controller' => 'App\\Controller\\Admin\\TeamController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        168 => [[['_route' => 'app_back_user_show', '_controller' => 'App\\Controller\\Admin\\UserController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        181 => [[['_route' => 'app_back_user_edit', '_controller' => 'App\\Controller\\Admin\\UserController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        189 => [[['_route' => 'app_back_user_delete', '_controller' => 'App\\Controller\\Admin\\UserController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        223 => [[['_route' => 'app_api_article_finduser', '_controller' => 'App\\Controller\\Api\\ArticleController::findUser'], ['id'], ['GET' => 0], null, false, true, null]],
-        246 => [[['_route' => 'app_api_player_findplayer', '_controller' => 'App\\Controller\\Api\\PlayerController::findPlayer'], ['id'], ['GET' => 0], null, false, true, null]],
-        267 => [[['_route' => 'app_api_team_findteam', '_controller' => 'App\\Controller\\Api\\TeamController::findTeam'], ['id'], ['GET' => 0], null, false, true, null]],
-        288 => [[['_route' => 'app_api_user_finduser', '_controller' => 'App\\Controller\\Api\\UserController::findUser'], ['id'], ['GET' => 0], null, false, true, null]],
-        328 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
-        348 => [[['_route' => '_wdt', '_controller' => 'web_profiler.controller.profiler::toolbarAction'], ['token'], null, null, false, true, null]],
-        394 => [[['_route' => '_profiler_search_results', '_controller' => 'web_profiler.controller.profiler::searchResultsAction'], ['token'], null, null, false, false, null]],
-        408 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
-        428 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
-        441 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
-        451 => [
+        35 => [[['_route' => 'app_back_article_show', '_controller' => 'App\\Controller\\ArticleController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        47 => [[['_route' => 'app_back_article_edit', '_controller' => 'App\\Controller\\ArticleController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        54 => [[['_route' => 'app_back_article_delete', '_controller' => 'App\\Controller\\ArticleController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        80 => [[['_route' => 'app_back_league_show', '_controller' => 'App\\Controller\\Admin\\LeagueController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        92 => [[['_route' => 'app_back_league_edit', '_controller' => 'App\\Controller\\Admin\\LeagueController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        99 => [[['_route' => 'app_back_league_delete', '_controller' => 'App\\Controller\\Admin\\LeagueController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        125 => [[['_route' => 'app_back_player_show', '_controller' => 'App\\Controller\\Admin\\PlayerController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        138 => [[['_route' => 'app_back_player_edit', '_controller' => 'App\\Controller\\Admin\\PlayerController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        146 => [[['_route' => 'app_back_player_delete', '_controller' => 'App\\Controller\\Admin\\PlayerController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        171 => [[['_route' => 'app_back_team_show', '_controller' => 'App\\Controller\\Admin\\TeamController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        184 => [[['_route' => 'app_back_team_edit', '_controller' => 'App\\Controller\\Admin\\TeamController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        192 => [[['_route' => 'app_back_team_delete', '_controller' => 'App\\Controller\\Admin\\TeamController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        217 => [[['_route' => 'app_back_user_show', '_controller' => 'App\\Controller\\Admin\\UserController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        230 => [[['_route' => 'app_back_user_edit', '_controller' => 'App\\Controller\\Admin\\UserController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        238 => [[['_route' => 'app_back_user_delete', '_controller' => 'App\\Controller\\Admin\\UserController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        272 => [[['_route' => 'app_api_article_finduser', '_controller' => 'App\\Controller\\Api\\ArticleController::findUser'], ['id'], ['GET' => 0], null, false, true, null]],
+        295 => [[['_route' => 'app_api_player_findplayer', '_controller' => 'App\\Controller\\Api\\PlayerController::findPlayer'], ['id'], ['GET' => 0], null, false, true, null]],
+        316 => [[['_route' => 'app_api_team_findteam', '_controller' => 'App\\Controller\\Api\\TeamController::findTeam'], ['id'], ['GET' => 0], null, false, true, null]],
+        337 => [[['_route' => 'app_api_user_finduser', '_controller' => 'App\\Controller\\Api\\UserController::findUser'], ['id'], ['GET' => 0], null, false, true, null]],
+        377 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
+        397 => [[['_route' => '_wdt', '_controller' => 'web_profiler.controller.profiler::toolbarAction'], ['token'], null, null, false, true, null]],
+        443 => [[['_route' => '_profiler_search_results', '_controller' => 'web_profiler.controller.profiler::searchResultsAction'], ['token'], null, null, false, false, null]],
+        457 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
+        477 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
+        490 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
+        500 => [
             [['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

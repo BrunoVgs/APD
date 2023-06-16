@@ -293,6 +293,7 @@
       <tag name="controller.service_arguments"/>
       <tag name="routing.route_loader"/>
     </service>
+    <service id="App\Controller\Admin\ArticleController" class="App\Controller\Admin\ArticleController" autowire="true" autoconfigure="true"/>
     <service id="App\Controller\Admin\LeagueController" class="App\Controller\Admin\LeagueController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
