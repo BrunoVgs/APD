@@ -691,6 +691,6 @@ class __TwigTemplate_a0ea94a4e03cb4dbe59a36ec6408f14b6b770f5b8601c27751c8b295293
 {% block form_group_class -%}
     col-sm-10
 {%- endblock form_group_class %}
-", "bootstrap_5_horizontal_layout.html.twig", "/var/www/html/Symfony/projet-album-panini-digital-back/vendor/symfony/twig-bridge/Resources/views/Form/bootstrap_5_horizontal_layout.html.twig");
+", "bootstrap_5_horizontal_layout.html.twig", "/var/www/html/Apothéose-APD/projet-album-panini-digital-back/vendor/symfony/twig-bridge/Resources/views/Form/bootstrap_5_horizontal_layout.html.twig");
     }
 }

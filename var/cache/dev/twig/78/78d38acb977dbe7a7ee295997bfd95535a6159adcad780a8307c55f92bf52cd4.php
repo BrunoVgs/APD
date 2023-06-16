@@ -73,6 +73,6 @@ class __TwigTemplate_76d7e7ee1b302ff71cae7ff28fea715b3a67c91cef7370c90dcc5bea16b
     <path d=\"M4 6v6a8 3 0 0 0 16 0v-6\"></path>
     <path d=\"M4 12v6a8 3 0 0 0 16 0v-6\"></path>
 </svg>
-", "@Doctrine/Collector/database.svg", "/var/www/html/Symfony/projet-album-panini-digital-back/vendor/doctrine/doctrine-bundle/Resources/views/Collector/database.svg");
+", "@Doctrine/Collector/database.svg", "/var/www/html/Apothéose-APD/projet-album-panini-digital-back/vendor/doctrine/doctrine-bundle/Resources/views/Collector/database.svg");
     }
 }
