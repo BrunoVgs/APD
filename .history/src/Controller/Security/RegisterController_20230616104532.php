@@ -31,7 +31,6 @@ class RegisterController extends AbstractController
         $user = new User();
         $user->setEmail($data['email']);
 
-        $user->setAvatar($data['username']);
         $user->setUsername($data['username']);
 
         // Hacher le mot de passe
@@ -39,8 +38,8 @@ class RegisterController extends AbstractController
         $user->setPassword($hashedPassword);
 
         // Persiste l'utilisateur dans la base de données
-        $entityManager->persist($user);
-        $entityManager->flush();
+        $userRepository->persist($user);
+        $userRepository->flush();
 
         return new JsonResponse(['message' => 'User enregistré']);
     }

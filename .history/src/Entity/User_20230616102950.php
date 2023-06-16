@@ -35,7 +35,7 @@ class User implements UserInterface
     private $avatar;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255)
      */
     private $email;
 
@@ -64,14 +64,6 @@ class User implements UserInterface
         return $this->username;
     }
 
-    public function setUsername(string $username): self
-
-    {
-        $this->username = $username;
-
-        return $this;
-    }
-
     public function getRoles(): array
     {
         $roles = $this->role;
@@ -96,7 +88,7 @@ class User implements UserInterface
 
         return $this;
     }
-
+    
     public function getEmail(): ?string
     {
         return $this->email;

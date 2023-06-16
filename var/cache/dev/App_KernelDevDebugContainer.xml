@@ -308,7 +308,6 @@
     <service id="App\Controller\Api\ArticleController" class="App\Controller\Api\ArticleController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
-      <argument type="service" id="doctrine.orm.default_entity_manager"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.GNc8e5B.App\Controller\Api\ArticleController"/>
       </call>
@@ -324,7 +323,6 @@
     <service id="App\Controller\Api\TeamController" class="App\Controller\Api\TeamController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
-      <argument type="service" id="doctrine.orm.default_entity_manager"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.GNc8e5B.App\Controller\Api\TeamController"/>
       </call>
@@ -332,7 +330,6 @@
     <service id="App\Controller\Api\UserController" class="App\Controller\Api\UserController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
-      <argument type="service" id="doctrine.orm.default_entity_manager"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.GNc8e5B.App\Controller\Api\UserController"/>
       </call>
@@ -340,10 +337,6 @@
     <service id="App\Controller\Security\RegisterController" class="App\Controller\Security\RegisterController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
-      <argument type="service" id="doctrine.orm.default_entity_manager"/>
-      <argument type="service" id="security.user_password_hasher"/>
-      <argument type="service" id="lexik_jwt_authentication.jwt_manager"/>
-      <argument type="service" id="security.user_password_encoder.generic"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.GNc8e5B.App\Controller\Security\RegisterController"/>
       </call>
@@ -4993,27 +4986,67 @@
         <argument key="loader" type="service_closure" id=".errored..service_locator.KfbR3DY.Symfony\Component\Config\Loader\LoaderInterface"/>
       </argument>
     </service>
+    <service id=".service_locator.ys8EL7c" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="articleRepository" type="service_closure" id="App\Repository\ArticleRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.ToWYKRb" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="playerRepository" type="service_closure" id="App\Repository\PlayerRepository"/>
       </argument>
     </service>
+    <service id=".service_locator.CgxesMx" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="teamRepository" type="service_closure" id="App\Repository\TeamRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator..Ae5NXw" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.3WKWN5g" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="userPasswordHasherInterface" type="service_closure" id="security.user_password_hasher"/>
+        <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.WB09TrS" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection"/>
     </service>
-    <service id=".service_locator.b_3K2TW" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.hcDstxJ" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Controller\Api\ArticleController::findUser" type="service_closure" id=".service_locator.ys8EL7c"/>
+        <argument key="App\Controller\Api\ArticleController::listArticles" type="service_closure" id=".service_locator.ys8EL7c"/>
         <argument key="App\Controller\Api\PlayerController::listPlayers" type="service_closure" id=".service_locator.ToWYKRb"/>
         <argument key="App\Controller\Api\PlayerController::searchPlayers" type="service_closure" id=".service_locator.ToWYKRb"/>
+        <argument key="App\Controller\Api\TeamController::findTeam" type="service_closure" id=".service_locator.CgxesMx"/>
+        <argument key="App\Controller\Api\TeamController::listTeams" type="service_closure" id=".service_locator.CgxesMx"/>
+        <argument key="App\Controller\Api\UserController::findUser" type="service_closure" id=".service_locator..Ae5NXw"/>
+        <argument key="App\Controller\Api\UserController::listUser" type="service_closure" id=".service_locator..Ae5NXw"/>
+        <argument key="App\Controller\Security\RegisterController::register" type="service_closure" id=".service_locator.3WKWN5g"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.KfbR3DY"/>
+        <argument key="App\Controller\Api\ArticleController:findUser" type="service_closure" id=".service_locator.ys8EL7c"/>
+        <argument key="App\Controller\Api\ArticleController:listArticles" type="service_closure" id=".service_locator.ys8EL7c"/>
         <argument key="App\Controller\Api\PlayerController:listPlayers" type="service_closure" id=".service_locator.ToWYKRb"/>
         <argument key="App\Controller\Api\PlayerController:searchPlayers" type="service_closure" id=".service_locator.ToWYKRb"/>
+        <argument key="App\Controller\Api\TeamController:findTeam" type="service_closure" id=".service_locator.CgxesMx"/>
+        <argument key="App\Controller\Api\TeamController:listTeams" type="service_closure" id=".service_locator.CgxesMx"/>
+        <argument key="App\Controller\Api\UserController:findUser" type="service_closure" id=".service_locator..Ae5NXw"/>
+        <argument key="App\Controller\Api\UserController:listUser" type="service_closure" id=".service_locator..Ae5NXw"/>
+        <argument key="App\Controller\Security\RegisterController:register" type="service_closure" id=".service_locator.3WKWN5g"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.KfbR3DY"/>
       </argument>
@@ -5380,12 +5413,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.b_3K2TW"/>
+      <argument type="service" id=".service_locator.hcDstxJ"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.b_3K2TW"/>
+      <argument type="service" id=".service_locator.hcDstxJ"/>
     </service>
     <service id=".doctrine.orm.default_metadata_driver.inner" class="Doctrine\Persistence\Mapping\Driver\MappingDriverChain">
       <call method="addDriver">
@@ -6182,7 +6215,7 @@
     <service id="lexik_jwt_authentication.key_loader" alias="lexik_jwt_authentication.key_loader.raw" public="true"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.b_3K2TW"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.hcDstxJ"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -6190,7 +6223,8 @@
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="Psr\Log\LoggerInterface" alias="logger"/>
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
-    <service id=".service_locator.Iy85afB" alias=".service_locator.b_3K2TW"/>
+    <service id=".service_locator.VWKm9wb" alias=".service_locator.3WKWN5g"/>
+    <service id=".service_locator.v9ooZOi" alias=".service_locator.hcDstxJ"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.Za9MpXe" alias=".service_locator.y4dplYt"/>
     <service id=".service_locator.4hi2aOY" alias=".service_locator.bBRwv06"/>
@@ -6215,7 +6249,11 @@
     <service id="argument_resolver.not_tagged_controller" alias="debug.argument_resolver.not_tagged_controller"/>
     <service id="doctrine.orm.default_metadata_driver" alias=".doctrine.orm.default_metadata_driver"/>
     <service id=".service_locator.JBAFp66" alias=".service_locator.KfbR3DY"/>
+    <service id=".service_locator.SXPi9O." alias=".service_locator.ys8EL7c"/>
     <service id=".service_locator.jtNkvIJ" alias=".service_locator.ToWYKRb"/>
+    <service id=".service_locator.fx1U4iE" alias=".service_locator.CgxesMx"/>
+    <service id=".service_locator.8PQa8Mp" alias=".service_locator..Ae5NXw"/>
+    <service id=".service_locator.vA77ayx" alias=".service_locator.3WKWN5g"/>
     <service id=".service_locator.S3Bk2.h" alias=".service_locator.GNc8e5B"/>
     <service id=".service_locator.L0rFhJm" alias=".service_locator.GVyCdgr"/>
     <service id=".service_locator.aa1PbBb" alias=".service_locator.nLgZj7R"/>

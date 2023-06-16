@@ -31,7 +31,6 @@ class RegisterController extends AbstractController
         $user = new User();
         $user->setEmail($data['email']);
 
-        $user->setAvatar($data['username']);
         $user->setUsername($data['username']);
 
         // Hacher le mot de passe

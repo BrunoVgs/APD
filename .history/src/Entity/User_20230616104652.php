@@ -30,12 +30,12 @@ class User implements UserInterface
     private $role = [];
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=yes)
      */
     private $avatar;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=yes)
      */
     private $email;
 

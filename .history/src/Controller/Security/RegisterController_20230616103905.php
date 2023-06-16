@@ -8,7 +8,6 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use App\Entity\User;
 use App\Repository\UserRepository;
-use Doctrine\ORM\EntityManager;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Doctrine\ORM\EntityManagerInterface;
 
@@ -21,7 +20,7 @@ class RegisterController extends AbstractController
     public function register(
         Request $request, 
         UserRepository $userRepository,
-        EntityManagerInterface $entityManager,
+
         UserPasswordHasherInterface $userPasswordHasherInterface ): JsonResponse
     {
         // Récupérer les données d'inscription depuis la requête
@@ -31,16 +30,13 @@ class RegisterController extends AbstractController
         $user = new User();
         $user->setEmail($data['email']);
 
-        $user->setAvatar($data['username']);
-        $user->setUsername($data['username']);
-
         // Hacher le mot de passe
         $hashedPassword = $userPasswordHasherInterface->hashPassword($user, $data['password']);
         $user->setPassword($hashedPassword);
 
         // Persiste l'utilisateur dans la base de données
-        $entityManager->persist($user);
-        $entityManager->flush();
+        $userRepository->persist($user);
+        $userRepository->flush();
 
         return new JsonResponse(['message' => 'User enregistré']);
     }

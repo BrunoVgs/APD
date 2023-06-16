@@ -35,7 +35,7 @@ class User implements UserInterface
     private $avatar;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255)
      */
     private $email;
 
@@ -64,14 +64,6 @@ class User implements UserInterface
         return $this->username;
     }
 
-    public function setUsername(string $username): self
-
-    {
-        $this->username = $username;
-
-        return $this;
-    }
-
     public function getRoles(): array
     {
         $roles = $this->role;
@@ -97,25 +89,9 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getEmail(): ?string
+    public function getUserIdentifier(): ?string
     {
         return $this->email;
-    }
-
-    public function setEmail(string $email): self
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
-    /**
-     *
-     * @see UserInterface
-     */
-    public function getUserIdentifier(): string
-    {
-        return (string) $this->email;
     }
 
     public function setUserIdentifier(string $email): self
@@ -144,8 +120,7 @@ class User implements UserInterface
 
     public function eraseCredentials()
     {
-        // If you store any temporary, sensitive data on the user, clear it here
-        // $this->plainPassword = null;
+        // Implement the logic to erase sensitive data
     }
 
     /**
@@ -172,4 +147,8 @@ class User implements UserInterface
         return $this;
     }
 
+    public function getUserIdentifier(): string
+    {
+        return $this->email;
+    }
 }
