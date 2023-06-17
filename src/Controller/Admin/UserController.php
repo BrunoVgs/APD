@@ -2,6 +2,8 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\User;
+use App\Form\UserType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
@@ -14,11 +16,14 @@ class UserController extends AbstractController
     /**
      * @Route("/admin/users",name="show users", methods={"GET"})
      */
-    public function index(): JsonResponse
+    public function index(): \Symfony\Component\HttpFoundation\Response
     {
-        return $this->json([
-            'message' => 'Accès à la gestion des utilisateurs!',
-            'path' => 'src/Controller/UserController.php',
+        $form = $this->createForm(UserType::class);
+        if ($form->isSubmitted()) die('coucou');
+
+
+        return $this->render('user/index.html.twig', [
+            'form' => $form->createView(),
         ]);
     }
     /**
