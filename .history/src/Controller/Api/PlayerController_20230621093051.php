@@ -66,30 +66,30 @@ class PlayerController extends AbstractController
      */
     public function searchPlayers(Request $request, PlayerRepository $playerRepository): JsonResponse
     {
-    $keyword = $request->query->get('keyword');
+        $keyword = $request->query->get('keyword');
 
-    if (empty($keyword)) {
-        return $this->json(['message' => 'Veuillez fournir un mot-clé'], Response::HTTP_BAD_REQUEST);
-    }
-
-        $players = $playerRepository->searchByName($keyword);
-        $playerData = [];
-
-        foreach ($players as $player) {
-            $playerData[] = [
-                'id' => $player->getId(),
-                'firstName' => $player->getFirstname(),
-                'lastName' => $player->getLastname(),
-                'position' => $player->getPosition(),
-                'age' => $player->getAge(),
-                'height' => $player->getHeight(),
-                'nationality' => $player->getNationality(),
-            ];
+        if (empty($keyword)) {
+            return $this->json(['message' => 'Veuillez fournir un mot-clé'], Response::HTTP_BAD_REQUEST);
         }
 
-        return $this->json($playerData);
+        try {
+            $players = $playerRepository->searchByName($keyword);
+            $playerData = [];
+
+            foreach ($players as $player) {
+                $playerData[] = [
+                    'id' => $player->getId(),
+                    'firstName' => $player->getFirstname(),
+                    'lastName' => $player->getLastname(),
+                    'position' => $player->getPosition(),
+                    'age' => $player->getAge(),
+                    'height' => $player->getHeight(),
+                    'nationality' => $player->getNationality(),
+                ];
+            }
+
+            return $this->json($playerData);
     }
-}
 
     /**
      * @Route("/api/players/search", methods={"GET"})
@@ -107,4 +107,5 @@ class PlayerController extends AbstractController
     }
 }
 */
+}
 ?>

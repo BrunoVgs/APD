@@ -72,6 +72,7 @@ class PlayerController extends AbstractController
         return $this->json(['message' => 'Veuillez fournir un mot-clé'], Response::HTTP_BAD_REQUEST);
     }
 
+    try {
         $players = $playerRepository->searchByName($keyword);
         $playerData = [];
 
@@ -107,4 +108,5 @@ class PlayerController extends AbstractController
     }
 }
 */
+}
 ?>

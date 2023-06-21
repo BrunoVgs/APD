@@ -47,7 +47,7 @@ class PlayerRepository extends ServiceEntityRepository
         return $this->createQueryBuilder('player')
             ->andWhere($this->createQueryBuilder('player')->expr()->orX(
                 $this->createQueryBuilder('player')->expr()->like('player.firstname', ':keyword'),
-                $this->createQueryBuilder('player')->expr()->like('player.lastname', ':keyword')
+                $this->createQueryBuilder('player')->expr()->like('player.lastName', ':keyword')
             ))
             ->setParameter('keyword', '%' . $keyword . '%')
             ->orderBy('player.id', 'ASC')
