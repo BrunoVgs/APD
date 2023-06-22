@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Entity;
 
 use App\Repository\UserRepository;
@@ -13,10 +12,13 @@ use Symfony\Component\Form\FormTypeInterface;
 use Symfony\Component\Form\FormView;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
  */
+
 class User implements FormTypeInterface
+
 {
     /**
      * @ORM\Id
@@ -28,12 +30,12 @@ class User implements FormTypeInterface
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $name;
+    private $username;
 
     /**
      * @ORM\Column(type="json")
      */
-    private $role = [] ;
+    private $role = [];
 
     /**
      * @ORM\Column(type="text")
@@ -41,7 +43,7 @@ class User implements FormTypeInterface
     private $avatar;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $email;
 
@@ -65,30 +67,28 @@ class User implements FormTypeInterface
         return $this->id;
     }
 
-    public function getName(): ?string
+    public function getUsername(): ?string
     {
-        return $this->name;
+        return $this->username;
     }
 
-    public function setName(string $name): self
+    public function setUsername(string $username): self
+
     {
-        $this->name = $name;
+        $this->username = $username;
 
         return $this;
     }
 
-    public function getRole(): array
+    public function getRoles(): array
     {
-        $role = $this->role;
-        // guarantee every user at least has ROLE_USER
-        // $roles[] = 'ROLE_USER';
-
-        return array_unique($role);
+        $roles = $this->role;
+        return array_unique($roles);
     }
 
-    public function setRole(array $role): self
+    public function setRoles(array $roles): self
     {
-        $this->role = $role;
+        $this->role = $roles;
 
         return $this;
     }
@@ -117,6 +117,22 @@ class User implements FormTypeInterface
         return $this;
     }
 
+    /**
+     *
+     * @see UserInterface
+     */
+    public function getUserIdentifier(): string
+    {
+        return (string) $this->email;
+    }
+
+    public function setUserIdentifier(string $email): self
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
     public function getPassword(): ?string
     {
         return $this->password;
@@ -127,6 +143,17 @@ class User implements FormTypeInterface
         $this->password = $password;
 
         return $this;
+    }
+
+    public function getSalt(): ?string
+    {
+        return null;
+    }
+
+    public function eraseCredentials()
+    {
+        // If you store any temporary, sensitive data on the user, clear it here
+        // $this->plainPassword = null;
     }
 
     /**
@@ -152,6 +179,7 @@ class User implements FormTypeInterface
 
         return $this;
     }
+
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
