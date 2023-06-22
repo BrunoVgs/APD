@@ -8,7 +8,7 @@ use App\Form\UserType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
-
+use Doctrine\ORM\EntityManagerInterface;
 /**
  * Controller Users pour la gestion des utilisateurs via l'espace admin
 
@@ -21,7 +21,9 @@ class UserController extends AbstractController
     public function index(): \Symfony\Component\HttpFoundation\Response
     {
         $form = $this->createForm(UserType::class);
-        if ($form->isSubmitted()) die('coucou');
+        if ($form->isSubmitted()) {
+            die('coucou');
+        }
 
 
         return $this->render('user/index.html.twig', [
@@ -32,16 +34,24 @@ class UserController extends AbstractController
     /**
      * @Route("/admin/users",name="add users", methods={"POST"})
      */
-    public function addUsers(): JsonResponse
+    public function addUsers(EntityManagerInterface $em): JsonResponse
     {
+        $user = new User();
+        $user->setEmail($_REQUEST['email'])
+            ->setUsername($_REQUEST['nom'])
+            ->setRoles([$_REQUEST['role']])
+            ->setAvatar($_REQUEST['avatar']??"https://picsum.photos/200")
+            ->setPassword($_REQUEST['password']);
+        $em->persist($user);
+        $em->flush();
         return $this->json([
             'message' => 'Ajout d’un utilisateur',
             'path' => 'src/Controller/UserController.php',
         ]);
     }
-     /**
-     * @Route("/admin/users/{id]",methods={"PUT"},requirements={"id"="\d+"})
-     */
+    /**
+    * @Route("/admin/users/{id]",methods={"PUT"},requirements={"id"="\d+"})
+    */
     public function updateUsers(int $id): JsonResponse
     {
         return $this->json([
@@ -49,7 +59,7 @@ class UserController extends AbstractController
             'path' => 'src/Controller/UserController.php',
         ]);
     }
-      /**
+    /**
      * @Route("/admin/users/{id]",methods={"DELETE"},requirements={"id"="\d+"})
      */
     public function deleteUsers(int $id): JsonResponse
@@ -59,4 +69,4 @@ class UserController extends AbstractController
             'path' => 'src/Controller/UserController.php',
         ]);
     }
-
+}
