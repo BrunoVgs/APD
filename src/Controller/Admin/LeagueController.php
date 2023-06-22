@@ -11,7 +11,6 @@ class LeagueController extends AbstractController
 {
     /**
      * @Route("/admin/league",name="show league", methods={"GET"})
-
      */
     public function index(): Response
     {
@@ -30,7 +29,6 @@ class LeagueController extends AbstractController
     {
         return $this->render('league/index.html.twig', [
             'controller_name' => 'LeagueController',
-
         ]);
     }
 

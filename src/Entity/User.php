@@ -15,8 +15,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
- */
-
+*/
 class User implements FormTypeInterface
 
 {

@@ -26,6 +26,7 @@ class UserController extends AbstractController
 
         return $this->render('user/index.html.twig', [
             'form' => $form->createView(),
+
         ]);
     }
     /**
@@ -59,5 +60,3 @@ class UserController extends AbstractController
         ]);
     }
 
-
-}

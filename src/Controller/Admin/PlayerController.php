@@ -52,3 +52,4 @@ class PlayerController extends AbstractController
         ]);
     }
 }
+
