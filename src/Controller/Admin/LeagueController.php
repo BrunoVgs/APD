@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+
 class LeagueController extends AbstractController
 {
     /**
@@ -14,11 +15,14 @@ class LeagueController extends AbstractController
     public function index(): Response
     {
         return $this->render('league/index.html.twig', [
+
             'controller_name' => 'LeagueController',
+
         ]);
     }
 
     /**
+
      * @Route("/admin/league",name="add league", methods={"POST"})
      */
     public function addLeague(): Response
@@ -29,6 +33,7 @@ class LeagueController extends AbstractController
     }
 
     /**
+
      * @Route("/admin/league/{id]",name="update league",methods={"PUT"},requirements={"id"="\d+"})
      */
     public function updateLeague(int $id): Response
