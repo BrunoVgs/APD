@@ -2,73 +2,59 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\User;
+use App\Form\UserType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 
-
-
 /**
- * @Route("/back/user", name="app_back_user_")
+ * Controller Users pour la gestion des utilisateurs via l'espace admin
  */
 class UserController extends AbstractController
 {
     /**
-     * @Route("/", name="index", methods={"GET"})
+     * @Route("/admin/users",name="show users", methods={"GET"})
      */
-    public function index(): Response
+    public function index(): \Symfony\Component\HttpFoundation\Response
     {
+        $form = $this->createForm(UserType::class);
+        if ($form->isSubmitted()) die('coucou');
+
+
         return $this->render('user/index.html.twig', [
-          
+            'form' => $form->createView(),
         ]);
     }
-
     /**
-     * 
-     * @Route("/new", name="new", methods={"GET", "POST"})   
-     * 
+     * @Route("/admin/users",name="add users", methods={"POST"})
      */
-    public function new() : Response 
-
+    public function addUsers(): JsonResponse
     {
-        return $this->render('user/new.html.twig', [
-
+        return $this->json([
+            'message' => 'Ajout d’un utilisateur',
+            'path' => 'src/Controller/UserController.php',
+        ]);
+    }
+     /**
+     * @Route("/admin/users/{id]",methods={"PUT"},requirements={"id"="\d+"})
+     */
+    public function updateUsers(int $id): JsonResponse
+    {
+        return $this->json([
+            'message' => 'Modification d’un utilisateur spécifique',
+            'path' => 'src/Controller/UserController.php',
+        ]);
+    }
+      /**
+     * @Route("/admin/users/{id]",methods={"DELETE"},requirements={"id"="\d+"})
+     */
+    public function deleteUsers(int $id): JsonResponse
+    {
+        return $this->json([
+            'message' => 'Suppression d’un utilisateur spécifique',
+            'path' => 'src/Controller/UserController.php',
         ]);
     }
 
-    /**
-     * Undocumented function
-     *
-     * @Route ("/{id}", name="show", methods={"GET"})
-     */
-    public function show() :Response
-
-    {
-        return $this->render('user/show.html.twig', [
-
-        ]);
-    }
-
-    /**
-     * @Route("/{id}/edit", name="edit", methods={"GET", "POST"})
-     */
-    public function edit()
-    {
-        return $this->render('user/edit.html.twig', [
-
-        ]);
-
-    }
-
-    /**
-     * 
-     *
-     * @Route("/{id}", name="delete", methods={"POST"})
-     */
-    public function delete() 
-    {
-        return $this->render('user/delete.html.twig', [
-
-        ]);
-    }
 }

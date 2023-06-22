@@ -7,66 +7,50 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 
-/**
- *  @Route("/back/league", name="app_back_league_")
- */
 class LeagueController extends AbstractController
 {
     /**
-     * @Route("/", name="index", methods={"GET"})
+     * @Route("/admin/league",name="show league", methods={"GET"})
      */
     public function index(): Response
     {
         return $this->render('league/index.html.twig', [
-            
-        ]);
-    }
 
-    /**
-     * function d'ajout d'une ligue
-     *
-     * @Route("/new", name="new", methods={"GET", "POST"})
-     */
-    public function new() : Response
-    {
-        return $this->render('league/new.html.twig', [
+            'controller_name' => 'LeagueController',
 
         ]);
     }
 
     /**
-     * Undocumented function
-     *
-     * @Route("/{id}", name="show", methods={"GET"})
-     */
-    public function show():Response
-    {
-        return $this->render('league/show.html.twig', [
 
+     * @Route("/admin/league",name="add league", methods={"POST"})
+     */
+    public function addLeague(): Response
+    {
+        return $this->render('league/index.html.twig', [
+            'controller_name' => 'LeagueController',
         ]);
     }
 
     /**
-     * @Route("/{id}/edit", name="edit", methods={"GET", "POST"})
+
+     * @Route("/admin/league/{id]",name="update league",methods={"PUT"},requirements={"id"="\d+"})
      */
-    public function edit()
+    public function updateLeague(int $id): Response
     {
-        return $this->render('league/edit.html.twig', [
-
+        return $this->render('league/index.html.twig', [
+            'controller_name' => 'LeagueController',
         ]);
-
     }
+
 
     /**
-     * 
-     *
-     * @Route("/{id}", name="delete", methods={"POST"})
+     * @Route("/admin/league/{id]",name="delete league",methods={"DELETE"},requirements={"id"="\d+"})
      */
-    public function delete() 
+    public function deleteLeague(int $id): Response
     {
-        return $this->render('league/delete.html.twig', [
-
+        return $this->render('league/index.html.twig', [
+            'controller_name' => 'LeagueController',
         ]);
     }
-
 }

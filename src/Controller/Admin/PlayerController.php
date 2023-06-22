@@ -3,69 +3,54 @@
 namespace App\Controller\Admin;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Player;
 
-
-/**
- * @Route("/back/player", name="app_back_player_")
- */
 class PlayerController extends AbstractController
 {
     /**
-     * @Route("/", name="index", methods={"GET"})
+     * @Route("/admin/players", name="admin_players", methods={"GET"})
      */
-    public function index(): Response
+    public function player(): Response
     {
-        return $this->render('player/index.html.twig', [
-            
-        ]);
+        return $this->render('admin/players/index.html.twig');
     }
 
     /**
-     * 
-     * @Route("/new", name="new", methods={"GET", "POST"})   
-     * 
-     */
-    public function new() : Response 
-
+    * @Route("/admin/players", name="admin_players", methods={"POST"})
+    */
+    public function add(): Response
     {
-        return $this->render('player/new.html.twig', [
-
-        ]);
+        return $this->redirectToRoute('admin_players');
     }
 
     /**
-     * Undocumented function
-     *
-     * @Route ("/{id}", name="show", methods={"GET"})
-     */
-    public function show() :Response
-
+    * @Route("/admin/player/{id}", name="admin_player_edit", methods={"PUT"})
+    */
+    public function edit(Request $request, $id): Response
     {
-        return $this->render('player/show.html.twig', [
-
-        ]);
+        return $this->redirectToRoute('admin_players');
     }
 
     /**
-     * @Route("/{id}/edit", name="edit", methods={"GET", "POST"})
-     */
-    public function edit()
+    * @Route("/admin/player/{id}", name="admin_players_delete", methods={"DELETE"})
+    */
+    public function delete($id): Response
     {
-        return $this->render('player/edit.html.twig', [
-
-        ]);
-
+        return $this->redirectToRoute('admin_players');
     }
 
-    /**
-     * @Route("/{id}", name="delete", methods={"POST"})
-     */
-    public function delete() 
+    public function show(?Player $player): Response
     {
-        return $this->render('player/delete.html.twig', [
+        if ($player === null) {
+            throw $this->createNotFoundException("ce joueur n'existe pas");
+        }
 
+        return $this->render('admin/players/show.html.twig', [
+            'player' => $player,
         ]);
     }
 }
+

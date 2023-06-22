@@ -6,15 +6,15 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class MainController extends AbstractController
+class RewardController extends AbstractController
 {
     /**
-     * @Route("/admin", name="app_back_default")
+     * @Route("/reward", name="app_reward")
      */
     public function index(): Response
     {
-        return $this->render('admin/index.html.twig', [
-            
+        return $this->render('reward/index.html.twig', [
+            'controller_name' => 'RewardController',
         ]);
     }
 }
