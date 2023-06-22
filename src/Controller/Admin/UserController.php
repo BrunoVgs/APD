@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+
 use App\Entity\User;
 use App\Form\UserType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -10,6 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * Controller Users pour la gestion des utilisateurs via l'espace admin
+
  */
 class UserController extends AbstractController
 {
@@ -24,6 +26,7 @@ class UserController extends AbstractController
 
         return $this->render('user/index.html.twig', [
             'form' => $form->createView(),
+
         ]);
     }
     /**
@@ -57,4 +60,3 @@ class UserController extends AbstractController
         ]);
     }
 
-}

@@ -6,9 +6,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-
-
-
 class TeamController extends AbstractController
 {
     /**
@@ -23,9 +20,8 @@ class TeamController extends AbstractController
 
     /**
      * function d'ajout d'une equipe
-
+     *
      * @Route("/admin/new/equipe", name="new", methods={"GET", "POST"})
-
      */
     public function new() : Response
     {
@@ -64,7 +60,6 @@ class TeamController extends AbstractController
      * 
      *
      * @Route("/admin/equipe/{id}", name="delete", methods={"POST"})
-
      */
     public function delete() 
     {

@@ -33,7 +33,6 @@ class LeagueController extends AbstractController
     }
 
     /**
-
      * @Route("/admin/league/{id]",name="update league",methods={"PUT"},requirements={"id"="\d+"})
      */
     public function updateLeague(int $id): Response
