@@ -192,8 +192,8 @@ class ApdFixtures extends Fixture
         // TODO : creation de 3 utilisateurs avec pour chacun un rôle différent.
 
         $admin = new User();
-        $admin->setUsername("administrateur");
-        $admin->setRoles(['ROLE_ADMIN']);
+        $admin->setUserame("administrateur");
+        $admin->setRole(['ROLE_ADMIN']);
         $admin->setAvatar("https://picsum.photos/200");
         $admin->setEmail("admin@admin.com");
         $admin->setPassword('$2y$13$C93npTTOPdbIyOxpb8QRtePRknHiazeYnivDZ4GWd4bk5uRB3TbUi');
@@ -205,7 +205,7 @@ class ApdFixtures extends Fixture
 
         $managerUser = new User();
         $managerUser->setUsername("manageur");
-        $managerUser->setRoles(['ROLE_MANAGER']);
+        $managerUser->setRole(['ROLE_MANAGER']);
         $managerUser->setAvatar("https://picsum.photos/200");
         $managerUser->setEmail("manager@manager.com");
         $managerUser->setPassword('$2y$13$x2y1i3Vnmx0ccnoHvKYxyeCIRUUtNlXfmW3zaovmF2vW7C22RanBu');
@@ -216,7 +216,7 @@ class ApdFixtures extends Fixture
 
         $user = new User;
         $user->setUsername("utilisateur");
-        $user->setRoles(['ROLE_USER']);
+        $user->setRole(['ROLE_USER']);
         $user->setAvatar("https://picsum.photos/200");
         $user->setEmail("user@user.com");
         $user->setPassword('$2y$13$4cXrYaLAn2X7Y7SZm5UQpu0u44yofmr5429CnmLMgO1DHYqrRekJK');
