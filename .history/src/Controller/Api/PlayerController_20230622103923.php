@@ -43,7 +43,6 @@ class PlayerController extends AbstractController
      */
     public function findPlayer(Player $player): Response
     {
-        
 
         if (!$player) {
             return $this->json(['message' => 'Joueur non trouvé'], Response::HTTP_NOT_FOUND);
