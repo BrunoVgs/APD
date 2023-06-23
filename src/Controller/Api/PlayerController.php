@@ -11,103 +11,52 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Serializer\SerializerInterface;
+
 
 class PlayerController extends AbstractController
 {
-
-    /**
+  /**
      * @Route("/api/players", methods={"GET"})
      */
-    public function listPlayers(PlayerRepository $playerRepository): Response
+    public function listPlayers(PlayerRepository $playerRepository, SerializerInterface $serializer): Response
     {
         $players = $playerRepository->findAll();
-        $playerData = [];
-        foreach ($players as $player) {
-            $playerData[] = [
-                'id' => $player->getId(),
-                'firstName' => $player->getFirstname(),
-                'lastName' => $player->getLastname(),
-                'position' => $player->getPosition(),
-                'age' => $player->getAge(),
-                'height' => $player->getHeight(),
-                'nationality' => $player->getNationality(),
-            ];
-        }
+        $serializedPlayers = $serializer->serialize($players, 'json', ['groups' => 'player_read']);
 
-        return $this->json($playerData);
+        return new JsonResponse($serializedPlayers, Response::HTTP_OK, [], true);
     }
 
-    
-      /**
+    /**
      * @Route("/api/players/{id}", methods={"GET"})
      */
-    public function findPlayer(Player $player): Response
+    public function findPlayer(Player $player, SerializerInterface $serializer): Response
     {
-        
-
         if (!$player) {
             return $this->json(['message' => 'Joueur non trouvé'], Response::HTTP_NOT_FOUND);
         }
 
-        $playerData = [
-            'id' => $player->getId(),
-            'firstName' => $player->getFirstname(),
-            'lastName' => $player->getLastname(),
-            'position' => $player->getPosition(),
-            'age' => $player->getAge(),
-            'height' => $player->getHeight(),
-            'nationality' => $player->getNationality(),
-        ];
+        $serializedPlayer = $serializer->serialize($player, 'json', ['groups' => 'player_read']);
 
-        return $this->json($playerData);
+        return new JsonResponse($serializedPlayer, Response::HTTP_OK, [], true);
     }
-
 
     /**
      * @Route("/api/players/search", methods={"GET"})
-     * exemple d'utilisation : http://votresite.com/api/players/search?keyword=killian
      */
-    public function searchPlayers(Request $request, PlayerRepository $playerRepository): JsonResponse
+    public function searchPlayers(Request $request, PlayerRepository $playerRepository, SerializerInterface $serializer): JsonResponse
     {
-    $keyword = $request->query->get('keyword');
+        $keyword = $request->query->get('keyword');
 
-    if (empty($keyword)) {
-        return $this->json(['message' => 'Veuillez fournir un mot-clé'], Response::HTTP_BAD_REQUEST);
-    }
-
-        $players = $playerRepository->searchByName($keyword);
-        $playerData = [];
-
-        foreach ($players as $player) {
-            $playerData[] = [
-                'id' => $player->getId(),
-                'firstName' => $player->getFirstname(),
-                'lastName' => $player->getLastname(),
-                'position' => $player->getPosition(),
-                'age' => $player->getAge(),
-                'height' => $player->getHeight(),
-                'nationality' => $player->getNationality(),
-            ];
+        if (empty($keyword)) {
+            return $this->json(['message' => 'Veuillez fournir un mot-clé'], Response::HTTP_BAD_REQUEST);
         }
 
-        return $this->json($playerData);
+        $players = $playerRepository->searchByName($keyword);
+        $serializedPlayers = $serializer->serialize($players, 'json', ['groups' => 'player_read']);
+
+        return new JsonResponse($serializedPlayers, Response::HTTP_OK, [], true);
     }
 }
-
-    /**
-     * @Route("/api/players/search", methods={"GET"})
-     * exemple d'utilisation : http://votresite.com/api/players/search?keyword=killian
-     */
-  /*  public function searchPlayers(Request $request)
-    {
-        // On récupère le param keyword dans la request
-
-        // avec le keyword je vais utiliser une méthode custom de mon repository PlayerRepository, qui va faire une recheche en BDD dans ma
-        // table players, en cherchant si keyword correspond soit au prénom, soit au nom
-
-
-        // je retourne les résultats en json
-    }
-}
-*/
 ?>

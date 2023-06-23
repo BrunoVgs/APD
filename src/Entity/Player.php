@@ -7,6 +7,8 @@ use App\Repository\PlayerRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
+
 
 /**
  * @ORM\Entity(repositoryClass=PlayerRepository::class)
@@ -29,31 +31,37 @@ class Player
 
     /**
     * @ORM\Column(type="string", length=255)
+    * @Groups({"player_read"})
     */
     private $firstname;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"player_read"})
      */
     private $lastname;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"player_read"})
      */
     private $nationality;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"player_read"})
      */
     private $position;
 
     /**
      * @ORM\Column(type="integer")
+     * @Groups({"player_read"})
      */
     private $age;
 
     /**
      * @ORM\Column(type="integer")
+     * @Groups({"player_read"})
      */
     private $height;
 

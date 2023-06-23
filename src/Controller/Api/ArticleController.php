@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Controller\Api;
 
 use App\Entity\Article;
@@ -8,54 +7,36 @@ use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-
+use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class ArticleController extends AbstractController
 {
-
     /**
      * @Route("/api/articles", methods={"GET"})
      */
-    public function listArticles(ArticleRepository $articleRepository): Response
+    public function listArticles(ArticleRepository $articleRepository, SerializerInterface $serializer): Response
     {
-        $article = $articleRepository->getRepository(Article::class)->findAll();
-        
-        $articleData = [];
-        foreach ($article as $article) {
-            $articleData[] = [
-                'id' => $article->getId(),
-                'title' => $article->getTitle(),
-                'content' => $article->getContent(),
-                'created_at' => $article->getCreated_at(),
-                'updated_at' => $article->getUpdated_at(),
+        $articles = $articleRepository->findAll();
+        $serializedArticles = $serializer->serialize($articles, 'json', ['groups' => 'article_read']);
 
-            ];
-        }
-
-        return $this->json($articleData);
+        return new Response($serializedArticles, Response::HTTP_OK, ['Content-Type' => 'application/json']);
     }
 
     /**
      * @Route("/api/article/{id}", methods={"GET"})
      */
-    public function findUser(int $id,ArticleRepository $articleRepository): Response
+    public function findArticle(int $id, ArticleRepository $articleRepository, SerializerInterface $serializer): Response
     {
-        $article = $articleRepository->getRepository(Article::class)->find($id);
+        $article = $articleRepository->find($id);
 
         if (!$article) {
             return $this->json(['message' => 'Article non trouvé'], Response::HTTP_NOT_FOUND);
         }
 
-        $articleData = [
-            'id' => $article->getId(),
-            'title' => $article->getTitle(),
-            'content' => $article->getContent(),
-            'created_at' => $article->getCreated_at(),
-            'updated_at' => $article->getUpdated_at(),
-         
-          
-        ];
+        $serializedArticle = $serializer->serialize($article, 'json', ['groups' => 'article_read']);
 
-        return $this->json($articleData);
+        return new Response($serializedArticle, Response::HTTP_OK, ['Content-Type' => 'application/json']);
     }
 }
+?>

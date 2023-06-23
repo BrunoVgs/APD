@@ -6,6 +6,8 @@ use App\Entity\Player;
 use Doctrine\Common\Collections\ArrayCollection;
 use App\Repository\PlayerRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
+
 
 /**
  * @ORM\Entity(repositoryClass=PlayerRepository::class)
@@ -33,16 +35,19 @@ class Team
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"team_read"})
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"team_read"})
      */
     private $city;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"team_read"})
      */
     private $stadium;
 

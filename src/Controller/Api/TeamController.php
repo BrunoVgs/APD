@@ -10,42 +10,35 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Serializer\SerializerInterface;
+
 
 class TeamController extends AbstractController
 {
-
     /**
      * @Route("/api/teams", methods={"GET"})
      */
-    public function listTeams(TeamRepository $teamRepository): Response
+    public function listTeams(TeamRepository $teamRepository, SerializerInterface $serializer): Response
     {
-        $teams = $teamRepository->getRepository(Team::class)->findAll();
-        dd($teams);
-        $teamData = [];
-        foreach ($teams as $team) {
-            $teamData[] = [
-                'id' => $team->getId(),
-            ];
-        }
+        $teams = $teamRepository->findAll();
+        $serializedTeams = $serializer->serialize($teams, 'json', ['groups' => 'team_read']);
 
-        return $this->json($teamData);
+        return new JsonResponse($serializedTeams, Response::HTTP_OK, [], true);
     }
 
     /**
      * @Route("/api/team/{id}", methods={"GET"})
      */
-    public function findTeam(int $id, TeamRepository $teamRepository): Response
+    public function findTeam(int $id, TeamRepository $teamRepository, SerializerInterface $serializer): Response
     {
-        $team = $teamRepository->getRepository(Team::class)->find($id);
+        $team = $teamRepository->find($id);
 
         if (!$team) {
-            return $this->json(['message' => 'Equipe non trouvé'], Response::HTTP_NOT_FOUND);
+            return $this->json(['message' => 'Equipe non trouvée'], Response::HTTP_NOT_FOUND);
         }
 
-        $teamData = [
-            'id' => $team->getId(),
-        ];
+        $serializedTeam = $serializer->serialize($team, 'json', ['groups' => 'team_read']);
 
-        return $this->json($teamData);
+        return new JsonResponse($serializedTeam, Response::HTTP_OK, [], true);
     }
 }

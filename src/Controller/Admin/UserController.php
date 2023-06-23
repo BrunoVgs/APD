@@ -21,7 +21,9 @@ class UserController extends AbstractController
     public function index(): \Symfony\Component\HttpFoundation\Response
     {
         $form = $this->createForm(UserType::class);
-        if ($form->isSubmitted()) die('coucou');
+        if ($form->isSubmitted()) {
+            die('coucou');
+        }
 
 
         return $this->render('user/index.html.twig', [
@@ -39,9 +41,9 @@ class UserController extends AbstractController
             'path' => 'src/Controller/UserController.php',
         ]);
     }
-     /**
-     * @Route("/admin/users/{id]",methods={"PUT"},requirements={"id"="\d+"})
-     */
+    /**
+    * @Route("/admin/users/{id]",methods={"PUT"},requirements={"id"="\d+"})
+    */
     public function updateUsers(int $id): JsonResponse
     {
         return $this->json([
@@ -49,7 +51,7 @@ class UserController extends AbstractController
             'path' => 'src/Controller/UserController.php',
         ]);
     }
-      /**
+    /**
      * @Route("/admin/users/{id]",methods={"DELETE"},requirements={"id"="\d+"})
      */
     public function deleteUsers(int $id): JsonResponse
@@ -59,4 +61,4 @@ class UserController extends AbstractController
             'path' => 'src/Controller/UserController.php',
         ]);
     }
-
+}

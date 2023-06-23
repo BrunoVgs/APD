@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\ArticleRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=ArticleRepository::class)
@@ -24,11 +25,13 @@ class Article
 
     /**
      * @ORM\Column(type="text")
+     * @Groups({"article_read"})
      */
     private $content;
 
     /**
      * @ORM\Column(type="datetime")
+     * @Groups({"article_read"})
      */
     private $created_at;
 
