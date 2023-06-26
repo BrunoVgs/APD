@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class DefaultController extends AbstractController
 {
     /**
-     * @Route("/admin/send-notification", name="send_notification" , methods={"GET"})
+     * @Route("/back/admin/send-notification", name="send_notification" , methods={"GET"})
      */
     public function sendNotification(NotificationService $notificationService): Response
     {

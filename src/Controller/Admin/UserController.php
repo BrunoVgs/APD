@@ -11,12 +11,12 @@ use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * Controller Users pour la gestion des utilisateurs via l'espace admin
-
+ *@Route("/back/user", name="app_back_user_")
  */
 class UserController extends AbstractController
 {
     /**
-     * @Route("/admin/users",name="show users", methods={"GET"})
+     * @Route("/", name="index", methods={"GET"})
      */
     public function index(): \Symfony\Component\HttpFoundation\Response
     {
@@ -32,9 +32,9 @@ class UserController extends AbstractController
         ]);
     }
     /**
-     * @Route("/admin/users",name="add users", methods={"POST"})
+     * @Route("/new",name="new", methods={"POST"})
      */
-    public function addUsers(): JsonResponse
+    public function new(): JsonResponse
     {
         return $this->json([
             'message' => 'Ajout d’un utilisateur',
@@ -42,9 +42,9 @@ class UserController extends AbstractController
         ]);
     }
     /**
-    * @Route("/admin/users/{id]",methods={"PUT"},requirements={"id"="\d+"})
+    * @Route("/{id}/edit", methods={"GET", "POST"},requirements={"id"="\d+"})
     */
-    public function updateUsers(int $id): JsonResponse
+    public function edit(int $id): JsonResponse
     {
         return $this->json([
             'message' => 'Modification d’un utilisateur spécifique',
@@ -52,9 +52,9 @@ class UserController extends AbstractController
         ]);
     }
     /**
-     * @Route("/admin/users/{id]",methods={"DELETE"},requirements={"id"="\d+"})
+     * @Route("/{id}",methods={"POST"},requirements={"id"="\d+"})
      */
-    public function deleteUsers(int $id): JsonResponse
+    public function delete(int $id): JsonResponse
     {
         return $this->json([
             'message' => 'Suppression d’un utilisateur spécifique',

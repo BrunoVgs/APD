@@ -8,6 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 
 /**
+ * on préfixe les routes du controller en la déclarant ici
  *  @Route("/back/article", name="app_back_article_")
  */
 class ArticleController extends AbstractController
@@ -18,7 +19,7 @@ class ArticleController extends AbstractController
     public function index(): Response
     {
         return $this->render('article/index.html.twig', [
-            'controller_name' => 'ArticleController',
+
         ]);
     }
 
@@ -36,7 +37,7 @@ class ArticleController extends AbstractController
     }
 
     /**
-     * Undocumented function
+     * 
      *
      * @Route ("/{id}", name="show", methods={"GET"})
      */
