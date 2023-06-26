@@ -10,7 +10,7 @@ use App\Entity\Player;
 class PlayerController extends AbstractController
 {
     /**
-     * @Route("/admin/players", name="admin_players", methods={"GET"})
+     * @Route("/admin/players", name="app_back_joueurs", methods={"GET"})
      */
     public function player(): Response
     {

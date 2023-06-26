@@ -8,12 +8,12 @@ use Symfony\Component\Routing\Annotation\Route;
 
 
 /**
- *  @Route("/back/article", name="app_back_article_")
+ *  @Route("/back/article", name="app_back_article")
  */
 class ArticleController extends AbstractController
 {
     /**
-     * @Route("/", name="index", methods={"GET"})
+     * @Route("/", name="app_back_articles", methods={"GET"})
      */
     public function index(): Response
     {
