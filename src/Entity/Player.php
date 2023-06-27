@@ -26,6 +26,7 @@ class Player
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"player_read"})
      */
     private $id;
 

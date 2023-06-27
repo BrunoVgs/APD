@@ -50,16 +50,52 @@ class PlayerController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="edit", methods={"GET","POST"},requirements={"id"="\d+"})
+     * @Route("/{id}", name="edit", methods={"GET","POST"}, requirements={"id"="\d+"})
      */
-    public function edit(EntityManagerInterface $entityManager): Response
+    public function edit($id, EntityManagerInterface $entityManager): Response
     {
-        $players = $entityManager->getRepository(Player::class)->findAll();
+        $player = $entityManager->getRepository(Player::class)->find($id);
+
+        if (!$player) {
+            throw $this->createNotFoundException('Joueur introuvable.');
+        }
 
         return $this->render('player/edit.html.twig', [
-            'players' => $players,
+            'player' => $player,
         ]);
     }
+
+
+    /**
+     * @Route("/{id}", name="update", methods={"GET","POST"}, requirements={"id"="\d+"})
+     */
+    public function update($id, Request $request, EntityManagerInterface $entityManager): Response
+    {
+        $player = $entityManager->getRepository(Player::class)->find($id);
+
+        if (!$player) {
+            throw $this->createNotFoundException('Joueur introuvable.');
+        }
+
+        // Récupérer les données du formulaire
+        $firstname = $request->request->get('firstname');
+        $lastname = $request->request->get('lastname');
+        $age = $request->request->get('age');
+        $position = $request->request->get('position');
+
+        // Mettre à jour les propriétés du joueur
+        $player->setFirstname($firstname);
+        $player->setLastname($lastname);
+        $player->setAge($age);
+        $player->setPosition($position);
+
+        // Enregistrer les modifications dans la base de données
+        $entityManager->flush();
+
+        // Rediriger vers la page de liste des joueurs
+        return $this->redirectToRoute('app_back_player_index');
+    }
+
 
     /**
      * @Route("/player/{id}/delete", name="delete", methods={"POST"}, requirements={"id"="\d+"})
