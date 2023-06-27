@@ -6,50 +6,64 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-
+    /**
+     * on préfixe les routes du controller en la déclarant ici
+     * @Route("/back/league", name="app_back_league_" )
+     */
 class LeagueController extends AbstractController
 {
     /**
-     * @Route("/admin/league",name="show league", methods={"GET"})
+     *
+     * @Route("/", name="index" , methods={"GET", "POST"})
      */
     public function index(): Response
     {
         return $this->render('league/index.html.twig', [
 
-            'controller_name' => 'LeagueController',
-
         ]);
     }
 
     /**
 
-     * @Route("/admin/league",name="add league", methods={"POST"})
+     * @Route("/new", name="new", methods={"POST"})
      */
-    public function addLeague(): Response
+    public function new(): Response
     {
-        return $this->render('league/index.html.twig', [
-            'controller_name' => 'LeagueController',
+        return $this->render('league/new.html.twig', [
+        
         ]);
     }
 
     /**
-     * @Route("/admin/league/{id]",name="update league",methods={"PUT"},requirements={"id"="\d+"})
+     *
+     * @Route ("/{id}", name="show", methods={"GET"})
      */
-    public function updateLeague(int $id): Response
+    public function show(): Response
+
     {
-        return $this->render('league/index.html.twig', [
-            'controller_name' => 'LeagueController',
+        return $this->render('league/show.html.twig', [
+
+        ]);
+    }
+
+    /**
+     * @Route("/{id}/edit", name="edit", methods={"GET", "POST"},requirements={"id"="\d+"})
+     */ 
+    public function edit(int $id): Response
+    {
+        return $this->render('league/edit.html.twig', [
+        
         ]);
     }
 
 
     /**
-     * @Route("/admin/league/{id]",name="delete league",methods={"DELETE"},requirements={"id"="\d+"})
+     * @Route("/{id}",name="delete", methods={"POST"},requirements={"id"="\d+"})
      */
-    public function deleteLeague(int $id): Response
+    public function delete(int $id): Response
     {
-        return $this->render('league/index.html.twig', [
-            'controller_name' => 'LeagueController',
+        return $this->render('league/delete.html.twig', [
+        
         ]);
     }
 }

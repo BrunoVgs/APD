@@ -7,38 +7,42 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Player;
 
+    /**
+     * on préfixe les routes du controller en la déclarant ici
+     * @Route("/back/player", name="app_back_player_", )
+     */
 class PlayerController extends AbstractController
 {
     /**
-     * @Route("/admin/players", name="app_back_joueurs", methods={"GET"})
+     * @Route("/", name="index", methods={"GET"})
      */
-    public function player(): Response
+    public function index(): Response
     {
-        return $this->render('admin/players/index.html.twig');
+        return $this->render('player/index.html.twig');
     }
 
     /**
-    * @Route("/admin/players", name="admin_players", methods={"POST"})
+    * @Route("/new", name="new", methods={"POST"})
     */
-    public function add(): Response
+    public function new(): Response
     {
-        return $this->redirectToRoute('admin_players');
+        return $this->redirectToRoute('player/new.html.twig');
     }
 
     /**
-    * @Route("/admin/player/{id}", name="admin_player_edit", methods={"PUT"})
+    * @Route("/{id}", name="edit", methods={"GET","POST"},requirements={"id"="\d+"})
     */
     public function edit(Request $request, $id): Response
     {
-        return $this->redirectToRoute('admin_players');
+        return $this->redirectToRoute('player/edit.html.twig');
     }
 
     /**
-    * @Route("/admin/player/{id}", name="admin_players_delete", methods={"DELETE"})
+    * @Route("/{id}", name="delete", methods={"POST"},requirements={"id"="\d+"})
     */
     public function delete($id): Response
     {
-        return $this->redirectToRoute('admin_players');
+        return $this->redirectToRoute('player/delete.html.twig');
     }
 
     public function show(?Player $player): Response
@@ -47,8 +51,8 @@ class PlayerController extends AbstractController
             throw $this->createNotFoundException("ce joueur n'existe pas");
         }
 
-        return $this->render('admin/players/show.html.twig', [
-            'player' => $player,
+        return $this->render('player/show.html.twig', [
+        
         ]);
     }
 }
