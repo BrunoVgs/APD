@@ -22,19 +22,167 @@ class ApdFixtures extends Fixture
 
     public function load(ObjectManager $manager): void
     {
+
+        /* ---------- Leagues ---------- */
+
         $league = new League(); 
         $league->setName('Oclock League'); 
         $league->setCountry('Oclock Land');
         $league->setCreatedAtValue();
-        $manager->persist($league); 
+        $manager->persist($league);
+
+        $league1 = new League(); 
+        $league1->setName('Ligua NOS'); 
+        $league1->setCountry('Portugal');
+        $league1->setCreatedAtValue();
+        $manager->persist($league1); 
+
+        $league2 = new League(); 
+        $league2->setName('Premier League'); 
+        $league2->setCountry('Angleterre');
+        $league2->setCreatedAtValue();
+        $manager->persist($league2); 
+
+        $league3 = new League(); 
+        $league3->setName('Ligue 1 UberEats'); 
+        $league3->setCountry('France');
+        $league3->setCreatedAtValue();
+        $manager->persist($league3); 
+
+        $league4 = new League(); 
+        $league4->setName('La liga'); 
+        $league4->setCountry('Espagne');
+        $league4->setCreatedAtValue();
+        $manager->persist($league4); 
+
+        $league5 = new League(); 
+        $league5->setName('Serie A'); 
+        $league5->setCountry('Italie');
+        $league5->setCreatedAtValue();
+        $manager->persist($league5); 
+
+        $league6 = new League(); 
+        $league6->setName('Bundesliga'); 
+        $league6->setCountry('Allemagne');
+        $league6->setCreatedAtValue();
+        $manager->persist($league6); 
+
+        $league7 = new League(); 
+        $league7->setName('Euredivisie'); 
+        $league7->setCountry('Pays-bas');
+        $league7->setCreatedAtValue();
+        $manager->persist($league7); 
+
+        /* ---------- TEAM ---------- */
+
 
         $team = new Team();
-        $team->setName('Team A');
-        $team->setCity('Oclock');
+        $team->setName('Oclock');
+        $team->setCity('Oclock LAnd');
         $team->setStadium('Oclock Arena');
         $team->setCreatedAtValue();
         $team->setLeague($league); 
         $manager->persist($team);
+
+        $team1 = new Team();
+        $team1->setName('FC Porto');
+        $team1->setCity('Porto');
+        $team1->setStadium('Estádio do Dragão');
+        $team1->setCreatedAtValue();
+        $team1->setLeague($league1); 
+        $manager->persist($team1);
+
+        $team2 = new Team();
+        $team2->setName('Real Madrid');
+        $team2->setCity('Madrid');
+        $team2->setStadium('Santiago Bernabeu');
+        $team2->setCreatedAtValue();
+        $team2->setLeague($league4); 
+        $manager->persist($team2);
+
+        $team3 = new Team();
+        $team3->setName('FC Barcelone');
+        $team3->setCity('Barcelone');
+        $team3->setStadium('Camp nou');
+        $team3->setCreatedAtValue();
+        $team3->setLeague($league4); 
+        $manager->persist($team3);
+        
+        $team4 = new Team();
+        $team4->setName('Chelsea');
+        $team4->setCity('Londres');
+        $team4->setStadium('Stamford bridge');
+        $team4->setCreatedAtValue();
+        $team4->setLeague($league2); 
+        $manager->persist($team4);
+
+        $team5 = new Team();
+        $team5->setName('Liverpool');
+        $team5->setCity('Liverpool');
+        $team5->setStadium('Anfield');
+        $team5->setCreatedAtValue();
+        $team5->setLeague($league2); 
+        $manager->persist($team5);
+
+        $team6 = new Team();
+        $team6->setName('Manchester United');
+        $team6->setCity('Manchester');
+        $team6->setStadium('Old Trafford');
+        $team6->setCreatedAtValue();
+        $team6->setLeague($league2); 
+        $manager->persist($team6);
+
+        $team7 = new Team();
+        $team7->setName('Paris Saint-Germain');
+        $team7->setCity('Paris');
+        $team7->setStadium('Parc des princes');
+        $team7->setCreatedAtValue();
+        $team7->setLeague($league3); 
+        $manager->persist($team7);
+
+        $team8 = new Team();
+        $team8->setName('Arsenal');
+        $team8->setCity('Londres');
+        $team8->setStadium('Emirates Stadium');
+        $team8->setCreatedAtValue();
+        $team8->setLeague($league2); 
+        $manager->persist($team8);
+
+        $team9 = new Team();
+        $team9->setName('Juventus');
+        $team9->setCity('Turin');
+        $team9->setStadium('Juventus Stadium');
+        $team9->setCreatedAtValue();
+        $team9->setLeague($league5); 
+        $manager->persist($team9);
+
+        $team10 = new Team();
+        $team10->setName('Ajax');
+        $team10->setCity('Amsterdam');
+        $team10->setStadium('Amsterdam Arena');
+        $team10->setCreatedAtValue();
+        $team10->setLeague($league7); 
+        $manager->persist($team10);
+
+        $team11 = new Team();
+        $team11->setName('Inter Milan');
+        $team11->setCity('Milan');
+        $team11->setStadium('San Siro');
+        $team11->setCreatedAtValue();
+        $team11->setLeague($league5); 
+        $manager->persist($team11);
+
+        $team12 = new Team();
+        $team12->setName('FC Bayern Munchen');
+        $team12->setCity('Munïch');
+        $team12->setStadium('Allianz Arena');
+        $team12->setCreatedAtValue();
+        $team12->setLeague($league6); 
+        $manager->persist($team12);
+
+
+        /* ---------- PLAYERS ---------- */
+
 
         $player1 = new Player();
         $player1->setTeam($team);
@@ -145,6 +293,7 @@ class ApdFixtures extends Fixture
         $player10->setHeight(193);
         $player10->setCreatedAtValue();
         $manager->persist($player10);
+
         
         for($i=0; $i < 2; $i++) {
             // requête vers l'API en lui passant un paramètre page correspondant à notre $i courant 
@@ -169,7 +318,7 @@ class ApdFixtures extends Fixture
             // On parcours chaque players récupérés et on défini ses données puis l'ajoute en BDD.
             foreach($players->items as $player) {
                 $newPlayer = new Player();
-                $newPlayer->setTeam($team);
+                $newPlayer->setTeam($team1);
                 if($player->firstName) {
                     $newPlayer->setFirstName($player->firstName);
                     $newPlayer->setLastName($player->firstName);
