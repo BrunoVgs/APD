@@ -15,6 +15,17 @@ hr.h-color{
     background: #eee;
 } 
 
+.content-container {
+    margin: 20px;
+}
+
+
+.navbar.navbar-expand-lg.bg-body-tertiary {
+    margin-right: 20px;
+    
+}
+  
+
 .sidebar li.active{
     background: #eee;
     border-radius: 8px;
@@ -27,3 +38,4 @@ hr.h-color{
 .sidebar li a{
     color: #fff;
 }
+
