@@ -4,32 +4,25 @@
 
 {% block content %}
     <h1>Liste des joueurs</h1>
-    <div class="table-responsive ml-4">
+    <div class="table-responsive">
         <table class="table">
             <thead>
                 <tr>
-                    <th>Prénom</th>
                     <th>Nom</th>
                     <th>Âge</th>
                     <th>Poste</th>
-                    <th></th>
                 </tr>
             </thead>
             <tbody>
-                {% for player in players|slice(0, 10) %}
+                {% for player in players %}
                     <tr>
                         <td>{{ player.firstname }}</td>
-                        <td>{{ player.lastname }}</td>
                         <td>{{ player.age }}</td>
                         <td>{{ player.position }}</td>
-                        <td>
-                            <a href="{{ path('app_back_player_edit', { 'id': player.id }) }}" class="btn btn-primary">Modifier</a>
-                            <a href="{{ path('app_back_player_delete', { 'id': player.id }) }}" class="btn btn-danger">Supprimer</a>
-                        </td>
                     </tr>
                 {% endfor %}
             </tbody>
         </table>
     </div>
-    <a class="btn btn-primary mt-4" href="{{ path('app_back_player_list') }}">Voir tout</a>
+    <a class="btn btn-primary" href="{{ path('list_players') }}">Voir tout</a>
 {% endblock %}

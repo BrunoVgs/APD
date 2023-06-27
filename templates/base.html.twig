@@ -31,7 +31,7 @@
                     
                 </div>
 
-                <ul class="list-unstyled px-3">
+                <ul class="list-unstyled px-4">
                 <li class""> <a href="{{path ('app_back_team_index')}}" class="text-decoration-none px-3 py-1 d-block"><i class="fa-sharp fa-solid fa-people-group"></i> Equipes </a></li>
                 <li class""> <a href="{{path ('app_back_player_index')}}" class="text-decoration-none px-3 py-1 d-block"><i class="fa-solid fa-star"></i> Joueurs </a></li>
                 <li class""> <a href="{{path ('app_back_article_index')}}"class="text-decoration-none px-3 py-1 d-block"><i class="fa-solid fa-newspaper"></i> Articles </a></li>
@@ -60,10 +60,12 @@
                             </div>
                         </div>
                         </nav>
-                    
+                    {% block content %}
+                    {% endblock %}
                     </div>
 
             </div>
+ 
         </div>
     
         <!--: Bootstrap Bundle with Popper -->
@@ -71,7 +73,9 @@
 
         
 
+
     
     </body>
+
 
 </html>
