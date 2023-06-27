@@ -14,7 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ArticleController extends AbstractController
 {
     /**
-     * @Route("/", name="app_back_articles", methods={"GET"})
+     * @Route("/", name="index", methods={"GET"})
      */
     public function index(): Response
     {
