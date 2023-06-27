@@ -28,7 +28,7 @@ class PlayerController extends AbstractController
         ]);
     }
 
-        /**
+    /**
      * @Route("/list", name="list", methods={"GET"})
      */
     public function list(EntityManagerInterface $entityManager): Response
@@ -52,18 +52,26 @@ class PlayerController extends AbstractController
     /**
      * @Route("/{id}", name="edit", methods={"GET","POST"},requirements={"id"="\d+"})
      */
-    public function edit(Request $request, $id): Response
+    public function edit(EntityManagerInterface $entityManager): Response
     {
-        return $this->redirectToRoute('player/edit.html.twig');
+        $players = $entityManager->getRepository(Player::class)->findAll();
+
+        return $this->render('player/edit.html.twig', [
+            'players' => $players,
+        ]);
     }
 
     /**
-     * @Route("/{id}", name="delete", methods={"POST"},requirements={"id"="\d+"})
+     * @Route("/player/{id}/delete", name="delete", methods={"POST"}, requirements={"id"="\d+"})
      */
-    public function delete($id): Response
+    public function delete(Player $player, EntityManagerInterface $entityManager): Response
     {
-        return $this->redirectToRoute('player/delete.html.twig');
+        $entityManager->remove($player);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('app_back_player_index');
     }
+
 
     public function show(?Player $player): Response
     {

@@ -30,7 +30,9 @@
                             <td>{{ player.position }}</td>
                             <td>
                                 <a href="{{ path('app_back_player_edit', { 'id': player.id }) }}" class="btn btn-primary">Modifier</a>
-                                <a href="{{ path('app_back_player_delete', { 'id': player.id }) }}" class="btn btn-danger">Supprimer</a>
+                                <form action="{{ path('app_back_player_delete', { 'id': player.id }) }}" method="post" class="d-inline">
+                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce joueur ?')">Supprimer</button>
+                                </form>
                             </td>
                         </tr>
                     {% endfor %}
