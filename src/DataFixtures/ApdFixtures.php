@@ -346,6 +346,7 @@ class ApdFixtures extends Fixture
         $admin->setAvatar("https://picsum.photos/200");
         $admin->setEmail("admin@admin.com");
         $admin->setPassword('$2y$13$C93npTTOPdbIyOxpb8QRtePRknHiazeYnivDZ4GWd4bk5uRB3TbUi');
+
         $admin->addPlayer($player1);
        
         $admin->addPlayer($player9);

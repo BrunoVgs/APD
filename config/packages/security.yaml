@@ -12,11 +12,20 @@ security:
             entity:
                 class: App\Entity\User
                 property: email
+        # used to reload user from session & other features (e.g. switch_user)
     firewalls:
-        api:
-            pattern: ^/api
+        login:
+            pattern: ^/api/login
             stateless: true
+            json_login:
+                check_path: /api/login_check
+                success_handler: lexik_jwt_authentication.handler.authentication_success
+                failure_handler: lexik_jwt_authentication.handler.authentication_failure
 
+        api:
+            pattern:   ^/api
+            stateless: true
+            jwt: ~
 
 # ...
 
@@ -32,6 +41,13 @@ security:
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
+        - { path: ^/api/login, roles: PUBLIC_ACCESS }
+        - { path: ^/api/register, roles: PUBLIC_ACCESS }
+        # Pour toutes les routes d'API qui nécessitent d'être loggé
+        # Utiliser ce format :
+        # (on imagine ici que cette route, retourne les infos de l'utilisateur à partir de son token)
+        # - { path: ^/api/me, roles: IS_AUTHENTICATED_FULLY}
+        - { path: ^/api,       roles: PUBLIC_ACCESS }
 
 when@test:
     security:
